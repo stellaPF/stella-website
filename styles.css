@@ -1176,3 +1176,62 @@ footer a:focus-visible {
     font-size: .94rem;
   }
 }
+
+
+/* STELLA footer — refined editorial layout */
+.stella-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 34px 22px 26px;
+  border-top: 1px solid rgba(145, 160, 178, .22);
+  text-align: center;
+}
+.stella-footer .footer-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+.stella-footer .footer-brand {
+  font-size: 25px;
+  line-height: 1.2;
+}
+.stella-footer .footer-top p {
+  margin: 0;
+  font-size: 12px;
+  opacity: .68;
+  letter-spacing: .02em;
+}
+.stella-footer .footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  width: min(100%, 680px);
+  margin: 22px auto 0;
+  padding: 15px 0 0;
+  border-top: 1px solid rgba(145, 160, 178, .16);
+}
+.stella-footer .footer-links a {
+  min-height: 36px;
+  padding: 6px 14px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color .2s ease, background .2s ease, border-color .2s ease;
+}
+.stella-footer .footer-links a:hover {
+  background: rgba(120, 150, 190, .09);
+  border-color: rgba(120, 150, 190, .2);
+  transform: none;
+}
+@media (max-width: 600px) {
+  .stella-footer { padding: 28px 16px 22px; }
+  .stella-footer .footer-links { gap: 5px; margin-top: 17px; padding-top: 12px; }
+  .stella-footer .footer-links a { padding: 7px 10px; font-size: 12px; }
+}

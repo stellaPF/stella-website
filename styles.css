@@ -694,3 +694,34 @@ body.light .side-menu .close-btn{color:#38566d;background:#edf2f6;border-color:#
  .side-group details a{font-size:13px;min-height:34px}
  .side-settings-group a{font-size:13px}
 }
+
+
+/* Tactile press feedback for sidebar navigation */
+.side-group a:active,.side-group summary:active{
+  transform:scale(.975);
+  background:rgba(120,148,173,.24);
+  border-color:rgba(120,148,173,.62);
+  color:#fff;
+  box-shadow:inset 0 2px 7px rgba(0,0,0,.18),0 0 0 2px rgba(120,148,173,.09);
+}
+.side-group a:focus-visible,.side-group summary:focus-visible{
+  outline:2px solid var(--stella-blue);
+  outline-offset:2px;
+  background:rgba(120,148,173,.16);
+}
+.side-group details[open]>summary{
+  background:rgba(120,148,173,.13);
+  border-color:rgba(120,148,173,.28);
+  color:#f4f7f9;
+}
+body.light .side-group a:active,body.light .side-group summary:active{
+  background:#dce7ee;
+  border-color:#7894ad;
+  color:#172d3d;
+  box-shadow:inset 0 2px 6px rgba(35,55,72,.12),0 0 0 2px rgba(88,117,142,.08);
+}
+body.light .side-group details[open]>summary{
+  background:#e8eff4;
+  border-color:#c5d4df;
+  color:#172d3d;
+}

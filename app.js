@@ -53,7 +53,7 @@ function translateTextNode(node,language){
 
 function updateLogoWordmarks(){
  const markup='Stell<span class="logo-a">a<sup>PF.</sup></span>';
- document.querySelectorAll('.brand > span,.side-brand,h1,.footer-brand').forEach(el=>{el.innerHTML=markup});
+ document.querySelectorAll('.brand > span,.side-brand,h1,.footer-brand').forEach(el=>{el.innerHTML=markup;el.setAttribute('dir','ltr');el.style.unicodeBidi='isolate'});
 }
 
 function setLanguage(language){

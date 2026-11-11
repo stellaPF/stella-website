@@ -339,3 +339,24 @@ body.light .site-search-result{background:#fafafa;border-color:#e4e4e4}
 .shop-btn{font-size:16px}
 @media(max-width:900px){.header-search-wrap{width:150px}}
 @media(max-width:600px){.header-search-wrap{width:112px;height:36px;padding:0 9px}.header-search-input{font-size:11px}.shop-btn{font-size:15px}}
+
+
+/* Refined main header layout: logo and navigation stay clear while all utility controls share one box */
+.nav{gap:22px;padding:12px 5%;min-height:66px}
+.brand{flex:0 0 auto;white-space:nowrap}
+.desktop-nav{flex:1;justify-content:center;align-items:center;min-width:0}
+.nav-actions{flex:0 0 auto;display:flex;align-items:center}
+.header-tools-box{display:flex;align-items:center;gap:7px;min-height:46px;padding:4px 6px;border:1px solid rgba(120,148,173,.28);border-radius:15px;background:rgba(255,255,255,.045);box-shadow:0 10px 30px rgba(0,0,0,.12);backdrop-filter:blur(14px)}
+.header-tools-box .icon-btn{width:36px;height:36px;border:0;background:transparent;border-radius:10px;display:grid;place-items:center;flex:0 0 36px;transition:background .2s,color .2s,transform .2s}
+.header-tools-box .icon-btn:hover{background:rgba(120,148,173,.13);color:var(--stella-blue);transform:translateY(-1px)}
+.header-tools-box .language-btn{font-size:11px;font-weight:800;letter-spacing:.4px}
+.header-tools-box .shop-btn{font-size:16px}
+.header-search-wrap{height:36px;width:180px;border:0;border-radius:10px;background:rgba(255,255,255,.035);padding:0 10px}
+.header-search-wrap:focus-within{background:rgba(120,148,173,.09);box-shadow:none}
+.header-search-input{font-size:12px}
+.header-tool-divider{width:1px;height:22px;background:rgba(120,148,173,.22);margin:0 2px}
+body.light .header-tools-box{background:rgba(255,255,255,.72);border-color:rgba(88,117,142,.25);box-shadow:0 10px 28px rgba(0,0,0,.07)}
+body.light .header-tools-box .icon-btn:hover{background:rgba(120,148,173,.1)}
+@media(max-width:1100px){.nav{gap:14px}.desktop-nav{gap:15px}.header-search-wrap{width:145px}}
+@media(max-width:900px){.desktop-nav{display:none}.nav{padding:10px 4%;min-height:62px}.header-tools-box{min-height:44px;padding:4px}.header-search-wrap{width:150px}}
+@media(max-width:600px){.nav{padding:9px 4%;gap:8px}.brand{font-size:23px}.header-tools-box{gap:4px;min-height:42px;border-radius:13px;padding:3px}.header-search-wrap{width:108px;height:34px;padding:0 8px}.header-search-input{font-size:11px}.header-search-icon{font-size:15px}.header-tool-divider{height:20px;margin:0}.header-tools-box .icon-btn{width:32px;height:32px;flex-basis:32px;border-radius:9px}.header-tools-box .shop-btn{font-size:14px}.header-tools-box .language-btn{font-size:10px}}

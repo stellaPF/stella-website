@@ -8,3 +8,7 @@
 
 /* Keep the portrait clear of the founder bio */
 @media(min-width:901px){.founder-photo{width:92%;justify-self:start}.founder-photo img{transform:scale(.88);transform-origin:left center}}
+
+/* Final founder layout: clean separation from the bio */
+@media(min-width:901px){.founder{grid-template-columns:minmax(280px,.62fr) minmax(0,1.38fr);gap:85px;align-items:center}.founder-photo{width:100%;max-width:420px;justify-self:center;min-height:520px}.founder-photo img{transform:scale(.84);transform-origin:center center}.founder h3,.founder p,.founder .founder-youtube-btn{max-width:720px}}
+@media(max-width:900px){.founder{gap:35px}.founder-photo{max-width:500px}}

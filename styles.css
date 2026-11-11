@@ -297,3 +297,8 @@ body.light .carousel-viewer-close{color:#111;border-color:rgba(0,0,0,.18);backgr
 .hero-card .stella-mark{font-size:30px}
 .post-avatar .stella-mark{font-size:17px}
 .post-avatar{display:grid;place-items:center;text-align:right;direction:ltr;unicode-bidi:isolate}
+
+
+/* Founder social SVG icons */
+.founder-social-btn svg{width:18px;height:18px;display:block}
+@media(max-width:600px){.founder-social-btn svg{width:16px;height:16px}}

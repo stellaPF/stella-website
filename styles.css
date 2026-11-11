@@ -360,3 +360,10 @@ body.light .header-tools-box .icon-btn:hover{background:rgba(120,148,173,.1)}
 @media(max-width:1100px){.nav{gap:14px}.desktop-nav{gap:15px}.header-search-wrap{width:145px}}
 @media(max-width:900px){.desktop-nav{display:none}.nav{padding:10px 4%;min-height:62px}.header-tools-box{min-height:44px;padding:4px}.header-search-wrap{width:150px}}
 @media(max-width:600px){.nav{padding:9px 4%;gap:8px}.brand{font-size:23px}.header-tools-box{gap:4px;min-height:42px;border-radius:13px;padding:3px}.header-search-wrap{width:108px;height:34px;padding:0 8px}.header-search-input{font-size:11px}.header-search-icon{font-size:15px}.header-tool-divider{height:20px;margin:0}.header-tools-box .icon-btn{width:32px;height:32px;flex-basis:32px;border-radius:9px}.header-tools-box .shop-btn{font-size:14px}.header-tools-box .language-btn{font-size:10px}}
+
+
+/* Elegant separators between header utility controls */
+.header-tools-box .header-tool-divider{width:1px;height:26px;margin:0 3px;background:linear-gradient(to bottom,transparent,rgba(120,148,173,.5),transparent);position:relative;flex:0 0 1px}
+.header-tools-box .header-tool-divider::after{content:"";position:absolute;top:50%;left:50%;width:3px;height:3px;border-radius:50%;background:rgba(120,148,173,.55);transform:translate(-50%,-50%);box-shadow:0 0 8px rgba(120,148,173,.35)}
+.header-tools-box .header-search-wrap{border-right:1px solid rgba(120,148,173,.18);border-radius:10px}
+@media(max-width:600px){.header-tools-box .header-tool-divider{height:22px;margin:0 2px}.header-tools-box .header-search-wrap{border-right:1px solid rgba(120,148,173,.16)}}

@@ -418,3 +418,18 @@ body.light .vip-card{background:linear-gradient(135deg,rgba(120,148,173,.13),rgb
 body.light .vip-card .eyebrow{background:rgba(120,148,173,.12);color:#4d6475}
 body.light .vip-card h2{color:#34434e}
 @media(max-width:600px){.vip-section{padding:16px 22px 20px}.vip-card{padding:18px 20px;border-radius:16px}.vip-card h2{font-size:12px;line-height:1.8}}
+
+
+/* Header balance: compact utility box, more room for brand and search */
+.nav{padding-left:2.2%;padding-right:2.2%;gap:18px}
+.brand{flex:0 0 auto;min-width:max-content}
+.nav-actions{flex:0 0 auto}
+.header-tools-box{gap:4px;min-height:40px;padding:3px 5px;border-radius:13px}
+.header-tools-box .icon-btn{width:31px;height:31px;flex-basis:31px;border-radius:8px}
+.header-tools-box .shop-btn svg{width:15px;height:15px}
+.header-search-wrap{width:clamp(190px,22vw,280px);height:32px;padding:0 9px}
+.header-search-input{font-size:12px}
+.header-tools-box .header-control-separator{height:20px;margin:0 2px}
+@media(max-width:1100px){.nav{padding-left:2%;padding-right:2%;gap:12px}.header-search-wrap{width:clamp(155px,19vw,210px)}}
+@media(max-width:900px){.nav{padding-left:2.5%;padding-right:2.5%;gap:10px}.header-search-wrap{width:clamp(160px,28vw,230px)}.header-tools-box{gap:3px}}
+@media(max-width:600px){.nav{padding-left:3%;padding-right:3%;gap:7px}.brand{font-size:23px}.header-tools-box{gap:2px;min-height:38px;padding:2px 4px}.header-search-wrap{width:clamp(112px,29vw,165px);height:31px;padding:0 7px}.header-tools-box .icon-btn{width:28px;height:28px;flex-basis:28px}.header-tools-box .header-control-separator{height:18px;margin:0 1px}}

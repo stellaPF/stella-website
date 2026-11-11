@@ -607,3 +607,10 @@ body.light .contact .email:hover{
   .contact{width:100%;gap:18px}
   .contact .email{width:100%;justify-content:center;padding:12px 10px;font-size:15px}
 }
+
+
+/* Email typography: Tajawal for Arabic, Inter for English only */
+.contact .email{font-family:Inter,Arial,sans-serif;font-size:clamp(16px,1.35vw,19px);font-weight:600;letter-spacing:-.015em}
+html[lang="ar"] .contact .email{font-family:"Tajawal","Noto Sans Arabic",Arial,sans-serif;font-size:clamp(17px,1.5vw,20px);font-weight:500;letter-spacing:0}
+html[lang="en"] .contact .email{font-family:Inter,Arial,sans-serif;font-size:clamp(16px,1.35vw,19px);font-weight:600;letter-spacing:-.015em}
+@media(max-width:600px){html[lang="ar"] .contact .email{font-size:17px}html[lang="en"] .contact .email{font-size:15px}}

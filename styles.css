@@ -1495,3 +1495,33 @@ table { max-width: 100%; }
   .hero-card strong { font-size: clamp(19px, 1.6vw, 24px); line-height: 1.6; }
   .hero-card small { font-size: 14px; line-height: 1.8; }
 }
+
+
+/* Living light effect for the Gaza-to-world hero label */
+.hero-copy > .eyebrow {
+  animation: gaza-world-glow 3.2s ease-in-out infinite;
+  will-change: box-shadow, border-color, background-color;
+}
+.hero-copy > .eyebrow::before {
+  animation: gaza-world-dot 3.2s ease-in-out infinite;
+}
+@keyframes gaza-world-glow {
+  0%, 100% {
+    border-color: rgba(135,174,207,.28);
+    box-shadow: 0 5px 18px rgba(67,115,154,.08), inset 0 1px rgba(255,255,255,.04);
+    background: linear-gradient(110deg,rgba(120,148,173,.10),rgba(120,148,173,.035));
+  }
+  50% {
+    border-color: rgba(155,202,239,.78);
+    box-shadow: 0 0 10px rgba(130,185,226,.28), 0 0 28px rgba(100,160,210,.22), inset 0 1px rgba(255,255,255,.13);
+    background: linear-gradient(110deg,rgba(120,166,204,.25),rgba(120,148,173,.09));
+  }
+}
+@keyframes gaza-world-dot {
+  0%, 100% { opacity: .55; box-shadow: 0 0 0 3px rgba(145,185,217,.08), 0 0 5px rgba(145,185,217,.2); }
+  50% { opacity: 1; box-shadow: 0 0 0 5px rgba(145,185,217,.2), 0 0 18px rgba(145,185,217,.9); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy > .eyebrow,
+  .hero-copy > .eyebrow::before { animation: none; }
+}

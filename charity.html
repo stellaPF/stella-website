@@ -13,7 +13,7 @@
 <body class="charity-page">
 <header class="nav">
   <a class="brand" href="index.html#home" aria-label="STELLA"><span>Stell<span class="logo-a">a<sup>PF.</sup></span></span></a>
-  <div class="nav-actions"><button id="themeBtn" class="icon-btn" type="button" aria-label="تبديل الوضع">◐</button><a class="icon-btn page-back" href="index.html" aria-label="العودة">↩</a></div>
+  <div class="nav-actions"><button id="languageBtn" class="icon-btn language-btn" type="button">EN</button><button id="themeBtn" class="icon-btn" type="button" aria-label="تبديل الوضع">◐</button><a class="icon-btn page-back" href="index.html" aria-label="العودة">↩</a></div>
 </header>
 <main>
   <section class="charity-intro">
@@ -31,5 +31,6 @@ const themeBtn=document.getElementById('themeBtn');
 if(localStorage.getItem('stella-theme')==='light')document.body.classList.add('light');
 themeBtn.addEventListener('click',()=>{document.body.classList.toggle('light');localStorage.setItem('stella-theme',document.body.classList.contains('light')?'light':'dark')});
 </script>
+<script src="language.js"></script>
 </body>
 </html>

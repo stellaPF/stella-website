@@ -442,3 +442,9 @@ body.light .vip-card h2{color:#34434e}
 .about-arrow:active{transform:scale(.94)}
 body.light .about-arrow{box-shadow:0 4px 14px rgba(0,0,0,.08)}
 body.light .about-arrow:hover{color:#38566d;background:rgba(120,148,173,.18)}
+
+
+/* Vertically center the shop control within the header utility box */
+.header-tools-box{align-items:center}
+.header-tools-box .shop-btn{align-self:center;display:grid;place-items:center;line-height:1;padding:0;margin:0}
+.header-tools-box .shop-btn svg{display:block;margin:auto}

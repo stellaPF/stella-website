@@ -979,3 +979,29 @@ html[lang="en"] .brand,html[lang="en"] .footer-brand,html[lang="en"] .logo-a{dir
  .section-head{margin-bottom:20px}
  .card p{font-size:14px;line-height:1.9}
 }
+
+
+/* Header refinement — a subtle 10% lift in presence */
+.nav{
+  padding-top:13px;padding-bottom:13px;
+  border-bottom-color:rgba(139,177,207,.22);
+  box-shadow:0 8px 28px rgba(0,0,0,.09);
+}
+.nav::before{
+  content:"";position:absolute;left:5%;right:5%;bottom:-1px;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(145,185,217,.42),transparent);
+  pointer-events:none;
+}
+.brand{transition:opacity .2s ease,transform .2s ease}
+.brand:hover{opacity:.94;transform:translateY(-1px)}
+.desktop-nav a{position:relative;padding:7px 1px;transition:color .2s ease}
+.desktop-nav a::after{
+  content:"";position:absolute;left:50%;right:50%;bottom:0;height:1px;
+  background:var(--stella-blue,#91b9d9);transition:left .22s ease,right .22s ease;
+}
+.desktop-nav a:hover::after,.desktop-nav a:focus-visible::after{left:0;right:0}
+.header-tools-box{border-color:rgba(145,185,217,.34);box-shadow:0 10px 30px rgba(0,0,0,.14),inset 0 1px rgba(255,255,255,.045)}
+body.light .nav{border-bottom-color:rgba(76,112,143,.2);box-shadow:0 8px 26px rgba(34,61,82,.055)}
+body.light .nav::before{background:linear-gradient(90deg,transparent,rgba(88,125,156,.38),transparent)}
+body.light .header-tools-box{border-color:rgba(88,125,156,.31);box-shadow:0 10px 26px rgba(34,61,82,.07),inset 0 1px #fff}
+@media(max-width:600px){.nav{padding-top:10px;padding-bottom:10px}.nav::before{left:4%;right:4%}}

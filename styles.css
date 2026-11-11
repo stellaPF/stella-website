@@ -113,3 +113,7 @@ html[lang="en"] .footer-brand{text-align:left}
 
 /* Give the hero tagline a little more visual separation above the wordmark */
 .hero-copy > .eyebrow{transform:translateY(-14px)}
+
+
+/* Create a clear visual gap between the hero tagline and STELLA wordmark */
+.hero-copy > .eyebrow{transform:translateY(-26px);margin-bottom:18px}

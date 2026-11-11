@@ -387,3 +387,11 @@ body.light .header-tools-box .header-control-separator{background:linear-gradien
 .header-tools-box .header-control-separator{width:1px;height:22px;flex:0 0 1px;margin:0 3px;background:rgba(120,148,173,.32);transform:none;box-shadow:none}
 .header-tools-box .header-control-separator::after{display:none}
 @media(max-width:600px){.header-tools-box .header-control-separator{height:20px;width:1px;flex-basis:1px;margin:0 2px}}
+
+
+/* Monochrome site-style shop icon */
+.header-tools-box .shop-btn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.header-tools-box .shop-btn{color:#aebbc5}
+.header-tools-box .shop-btn:hover{color:var(--stella-blue)}
+body.light .header-tools-box .shop-btn{color:#5d7284}
+body.light .header-tools-box .shop-btn:hover{color:var(--stella-blue)}

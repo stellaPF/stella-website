@@ -1695,3 +1695,111 @@ table { max-width: 100%; }
     font-size: 13px;
   }
 }
+
+
+/* Homepage refinement: place the Born statement directly beneath the discovery actions */
+@media (min-width: 901px) {
+  main#home > .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  main#home .hero-copy {
+    width: min(100%, 900px);
+    max-width: 900px;
+    margin-inline: auto;
+  }
+}
+main#home .hero-card {
+  width: min(100%, 720px);
+  min-height: 118px;
+  margin-top: clamp(24px, 3vw, 38px);
+  padding: clamp(20px, 3vw, 30px);
+  border: 1px solid rgba(120,148,173,.3);
+  border-radius: 20px;
+  background: linear-gradient(120deg,rgba(120,148,173,.13),rgba(255,255,255,.035));
+  box-shadow: 0 18px 46px rgba(0,0,0,.14),inset 0 1px rgba(255,255,255,.05);
+  backdrop-filter: blur(16px);
+}
+main#home .hero-card .mark {
+  flex: 0 0 auto;
+  line-height: 1;
+}
+main#home .hero-card strong {
+  display: block;
+  line-height: 1.55;
+  letter-spacing: .01em;
+}
+main#home .hero-card small {
+  display: block;
+  margin-top: 7px;
+  line-height: 1.8;
+  color: #aeb8c2;
+}
+main#home > .section {
+  padding-block: clamp(64px, 8vw, 104px);
+}
+main#home > .section > h2,
+main#home .section-head h2 {
+  line-height: 1.45;
+  text-wrap: balance;
+}
+main#home .section-head {
+  margin-bottom: clamp(22px, 3vw, 34px);
+}
+main#home .card,
+main#home .about-activity-card,
+main#home .vip-card {
+  border-color: rgba(120,148,173,.2);
+  box-shadow: 0 14px 38px rgba(0,0,0,.10);
+}
+main#home .card {
+  border-radius: 20px;
+}
+main#home .card h3,
+main#home .about-activity-card h3 {
+  line-height: 1.65;
+}
+main#home .card p,
+main#home .about-activity-card p {
+  line-height: 1.95;
+}
+main#home .cta-row {
+  align-items: center;
+  gap: 12px;
+}
+main#home .cta-row .btn {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+body.light main#home .hero-card {
+  background: linear-gradient(120deg,rgba(120,148,173,.12),rgba(255,255,255,.88));
+  border-color: rgba(88,117,142,.26);
+  box-shadow: 0 18px 42px rgba(0,0,0,.07),inset 0 1px rgba(255,255,255,.8);
+}
+body.light main#home .hero-card small {
+  color: #667582;
+}
+@media (max-width: 900px) {
+  main#home .hero-card {
+    margin-top: 24px;
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  main#home .hero-card {
+    min-height: 0;
+    gap: 14px;
+    padding: 18px;
+    border-radius: 16px;
+  }
+  main#home .hero-card .mark {
+    font-size: 54px;
+  }
+  main#home .hero-card strong {
+    font-size: 15px;
+  }
+  main#home .hero-card small {
+    font-size: 11px;
+  }
+}

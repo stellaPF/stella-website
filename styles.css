@@ -1445,3 +1445,53 @@ table { max-width: 100%; }
   font-weight: 800 !important;
   letter-spacing: 0 !important;
 }
+
+
+/* Desktop homepage hero: use the full first screen with balanced spacing */
+@media (min-width: 901px) {
+  .hero {
+    min-height: calc(100svh - 76px);
+    padding: clamp(56px, 7vh, 100px) clamp(64px, 8vw, 140px);
+    grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr);
+    gap: clamp(48px, 6vw, 100px);
+    align-items: center;
+  }
+  .hero-copy {
+    width: 100%;
+    max-width: 850px;
+    justify-self: stretch;
+  }
+  .hero-copy h1 {
+    font-size: clamp(92px, 10.5vw, 166px);
+    line-height: 1.02;
+    letter-spacing: -.045em;
+    margin: 22px 0 26px;
+  }
+  .hero-copy > .eyebrow {
+    margin-bottom: 24px;
+  }
+  .hero-copy > .lead {
+    max-width: 760px;
+    font-size: clamp(23px, 2.1vw, 31px);
+    line-height: 1.75;
+  }
+  .hero-copy > .muted {
+    max-width: 720px;
+    font-size: clamp(17px, 1.35vw, 20px);
+    line-height: 2;
+  }
+  .hero-copy .cta-row {
+    margin-top: clamp(28px, 3.5vh, 44px);
+    gap: 16px;
+  }
+  .hero-card {
+    width: 100%;
+    min-height: 210px;
+    padding: clamp(28px, 3vw, 44px);
+    justify-self: stretch;
+    gap: 24px;
+  }
+  .hero-card .mark { font-size: clamp(76px, 7vw, 108px); }
+  .hero-card strong { font-size: clamp(19px, 1.6vw, 24px); line-height: 1.6; }
+  .hero-card small { font-size: 14px; line-height: 1.8; }
+}

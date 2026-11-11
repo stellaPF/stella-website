@@ -108,6 +108,12 @@ function setLanguage(language){
   metaDescription.dataset.originalContent=raw;
   metaDescription.setAttribute('content',language==='en'?'STELLA — a content, education and digital projects platform from Gaza to the world.':'STELLA — منصة محتوى وتعليم ومشاريع رقمية من غزة إلى العالم.');
  }
+ // Explicitly translate the two section labels on every language switch.
+ const fixedLabels=[['#about .eyebrow','من نحن','About us'],['#charity .eyebrow','العطاء والأثر','Giving & Impact']];
+ fixedLabels.forEach(([selector,ar,en])=>document.querySelectorAll(selector).forEach(el=>{
+  if(!el.dataset.stellaLabelAr)el.dataset.stellaLabelAr=ar;
+  el.textContent=language==='en'?en:el.dataset.stellaLabelAr;
+ }));
  const btn=document.getElementById('languageBtn');if(btn)btn.textContent=language==='ar'?'EN':'Arabic';
  localStorage.setItem('stella-language',language);
 }

@@ -328,3 +328,14 @@ body.light .search-close{border-color:rgba(0,0,0,.12);background:rgba(0,0,0,.03)
 body.light .site-search-box{background:#fff;border-color:#ddd}
 body.light .site-search-result{background:#fafafa;border-color:#e4e4e4}
 @media(max-width:600px){.search-overlay{padding:76px 14px 20px}.search-panel{padding:26px 18px;border-radius:20px}.search-panel h2{font-size:30px}.search-close{top:14px;inset-inline-end:14px}.site-search-box{height:48px}}
+
+
+/* Compact rounded header search + shop button */
+.header-search-wrap{height:38px;width:190px;display:flex;align-items:center;gap:8px;border:1px solid rgba(120,148,173,.32);border-radius:12px;background:rgba(255,255,255,.045);padding:0 11px;transition:border-color .2s,background .2s,box-shadow .2s}
+.header-search-wrap:focus-within{border-color:var(--stella-blue);background:rgba(120,148,173,.07);box-shadow:0 0 0 3px rgba(120,148,173,.07)}
+.header-search-icon{color:var(--stella-blue);font-size:17px;line-height:1}
+.header-search-input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:inherit;font:inherit;font-size:12px}
+.header-search-input::placeholder{color:#777}
+.shop-btn{font-size:16px}
+@media(max-width:900px){.header-search-wrap{width:150px}}
+@media(max-width:600px){.header-search-wrap{width:112px;height:36px;padding:0 9px}.header-search-input{font-size:11px}.shop-btn{font-size:15px}}

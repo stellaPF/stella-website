@@ -1375,3 +1375,25 @@ table { max-width: 100%; }
   .feature-section > h2 { font-size: clamp(30px, 8vw, 42px); line-height: 1.35; }
   .feature-section > .muted { font-size: 15px; line-height: 1.9; }
 }
+
+
+/* Keep the decorative vertical rails at the card edge on every screen */
+#charity::before,
+#support::before {
+  inset: 22px 22px 22px auto !important;
+  width: 3px;
+  border-radius: 999px;
+  opacity: .72;
+}
+@media (max-width: 900px) {
+  #charity::before,
+  #support::before {
+    inset: 18px 16px 18px auto !important;
+  }
+}
+@media (max-width: 600px) {
+  #charity::before,
+  #support::before {
+    inset: 16px 12px 16px auto !important;
+  }
+}

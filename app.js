@@ -12,16 +12,15 @@ if(localStorage.getItem('stella-theme')==='light')document.body.classList.add('l
 
 const translations={
 'الرئيسية':'Home','من نحن':'About us','المحتوى':'Content','الكورسات والدورات':'Courses','المؤسس':'Founder','المنتجات والمشاريع':'Products & Projects',
-'التعاون والشراكات':'Partnerships','الداعمون ماليًا':'Support STELLA','الإعلانات':'Advertising','الأخبار والتحديثات':'News & Updates','انضم إلى STELLA':'Join STELLA','تواصل معنا':'Contact us','الإعدادات':'Settings','تطوير الذات':'Self-development','البودكاست':'Podcast','التاريخ والحضارات':'History & Civilizations','العربية / English':'العربية / English','الوضع النهاري / الليلي':'Light / Dark mode',
+'التعاون والشراكات':'Partnerships','الداعمون ماليًا':'Support STELLA','الإعلانات':'Advertising','الأخبار والتحديثات':'News & Updates','انضم إلى STELLA':'Join STELLA','تواصل معنا':'Contact us','الإعدادات':'Settings','تطوير الذات':'Self-development','البودكاست':'Podcast','التاريخ والحضارات':'History & Civilizations','العربية / English':'Arabic / English','الوضع النهاري / الليلي':'Light / Dark mode',
 'من غزة إلى العالم':'From Gaza to the world','شركة ولدت قديمًا، لتصنع مستقبلًا يصل إلى العالم.':'A company with roots in the past, building a future that reaches the world.',
 'منصة تجمع المحتوى، التعليم، المشاريع، التعاون والأفكار في تجربة واحدة هادئة، حديثة وقابلة للنمو.':'A platform bringing content, education, projects, partnerships and ideas together in one modern, evolving experience.',
 'اكتشف STELLA':'Discover STELLA','Born in the Past, Built for the Future.':'Born in the Past, Built for the Future.','1999 — عنصر رمزي في هوية STELLA، وليس تاريخ التأسيس.':'1999 — a symbolic part of STELLA’s identity, not its founding date.',
 'من غزة، حيث تبدأ الحكاية، إلى العالم حيث نطمح أن يصل أثرنا.':'From Gaza, where the story begins, to the world, where we hope our impact will reach.',
-'لم تنشأ STELLA من ظروف عادية، بل من واقع مليء بالتحديات ومن إيمان بأن الأحلام الكبيرة لا تعرف حدودًا. نسعى لصناعة محتوى مفيد، فرص تعليم، مشاريع وشراكات تترك أثرًا.':'STELLA was not born in ordinary circumstances. It grew from challenge and the belief that big dreams know no borders. We aim to create useful content, learning opportunities, projects and partnerships that make a difference.',
+'لم تنشأ stella من ظروف عادية، بل من واقع مليء بالتحديات ومن إيمان بأن الأحلام الكبيرة لا تعرف حدودًا. نسعى لصناعة محتوى مفيد، فرص تعليم، مشاريع وشراكات تترك أثرًا.':'STELLA was not born in ordinary circumstances. It grew from challenge and the belief that big dreams know no borders. We aim to create useful content, learning opportunities, projects and partnerships that make a difference.',
 'Founder & CEO of STELLA':'Founder & CEO of STELLA','فلسطيني، حاصل على دبلوم فني عمليات جراحية وبكالوريوس في التمريض، مع خبرة تمتد لثماني سنوات في صناعة المحتوى الرقمي ومؤهلات في صناعة المحتوى.':'Palestinian, with a diploma as a Surgical Operations Technician and a bachelor’s degree in Nursing, plus eight years of digital content creation experience and related qualifications.',
 'رحلة مهنية وتعليمية تشكلت وسط تحديات غزة، مع رؤية لبناء أثر يتجاوز الحدود.':'A professional and educational journey shaped by the challenges of Gaza, with a vision to create impact beyond borders.',
-'قناة المؤسس على YouTube':'Founder’s YouTube channel',
-'↗':'↗','ثلاثة مسارات، عالم واسع من الأفكار.':'Three paths. A world of ideas.',
+'قناة المؤسس على YouTube':'Founder’s YouTube channel','↗':'↗','ثلاثة مسارات، عالم واسع من الأفكار.':'Three paths. A world of ideas.',
 'صناعة المحتوى، تطوير الذات، الإنتاجية، النصائح، الاستثمار والتكنولوجيا.':'Content creation, self-development, productivity, tips, investing and technology.',
 'روحي، ديني، نفسي، حياتي، جسدي، مال وعلاقات.':'Spirituality, faith, psychology, life, wellbeing, money and relationships.',
 'الدول، الشخصيات البارزة، الأحداث العالمية، المؤلفون والكتاب، الشركات، الاستقصائي، الوثائقي والرياضة.':'Countries, notable figures, world events, writers, companies, investigative stories, documentaries and sports.',
@@ -40,15 +39,26 @@ const translations={
 'آخر المستجدات':'Latest Updates','مساحة مخصصة لإعلانات الشركة والمشاريع والإنجازات والفعاليات والشراكات.':'A space for company announcements, projects, achievements, events and partnerships.',
 'انضم':'Join','ساهم في بناء المشاريع والمبادرات.':'Help build projects and initiatives.','فرص العمل':'Career Opportunities','تابع الفرص المهنية القادمة.':'Explore upcoming career opportunities.','تعاون معنا في إنتاج محتوى جديد.':'Collaborate with us to create new content.',
 'لنبقى على اتصال.':'Let’s stay connected.','للاستفسارات العامة، الشراكات، الإعلام والفرص التجارية.':'For general inquiries, partnerships, media and business opportunities.',
-'© 2026 STELLA. All rights reserved.':'© 2026 STELLA. All rights reserved.','تواصل':'Contact','من نحن':'About us'
+'© 2026 STELLA. All rights reserved.':'© 2026 STELLA. All rights reserved.','تواصل':'Contact','Privacy':'الخصوصية','Terms':'الشروط',
+'التنقل':'Navigation','تبديل الوضع':'Toggle theme','فتح القائمة':'Open menu','إغلاق':'Close','Switch language':'تغيير اللغة'
 };
+const reverseTranslations=Object.fromEntries(Object.entries(translations).map(([ar,en])=>[en,ar]));
+
 function translateTextNode(node,language){
- const original=node.nodeValue.trim();
- if(!original)return;
- if(!node.__stellaOriginal)node.__stellaOriginal=node.nodeValue;
- const source=node.__stellaOriginal.trim();
- const translated=language==='en'?(translations[source]||source):source;
- node.nodeValue=node.__stellaOriginal.replace(source,translated);
+ const raw=node.__stellaOriginal||node.nodeValue;
+ const source=raw.trim();
+ if(!source)return;
+ const dictionary=language==='en'?translations:reverseTranslations;
+ const translated=dictionary[source]||source;
+ node.nodeValue=raw.replace(source,translated);
+}
+function translateAttribute(el,attribute,language){
+ const key=attribute==='aria-label'?'originalLabel':'originalTitle';
+ const raw=el.dataset[key]||el.getAttribute(attribute);
+ if(!raw)return;
+ el.dataset[key]=raw;
+ const dictionary=language==='en'?translations:reverseTranslations;
+ el.setAttribute(attribute,dictionary[raw]||raw);
 }
 
 function updateLogoWordmarks(){
@@ -67,7 +77,16 @@ function setLanguage(language){
  }});
  let node; while(node=walker.nextNode())translateTextNode(node,language);
  document.querySelectorAll('.side-inner summary').forEach(el=>{if(!el.dataset.original)el.dataset.original=el.textContent;el.textContent=language==='en'?(translations[el.dataset.original]||el.dataset.original):el.dataset.original});
- document.querySelectorAll('[aria-label]').forEach(el=>{if(!el.dataset.originalLabel)el.dataset.originalLabel=el.getAttribute('aria-label');el.setAttribute('aria-label',language==='en'?(translations[el.dataset.originalLabel]||el.dataset.originalLabel):el.dataset.originalLabel)});
+ document.querySelectorAll('[aria-label]').forEach(el=>translateAttribute(el,'aria-label',language));
+ document.querySelectorAll('[title]').forEach(el=>translateAttribute(el,'title',language));
+ const titleMap={ar:'STELLA — من غزة إلى العالم',en:'STELLA — From Gaza to the World'};
+ document.title=titleMap[language];
+ const metaDescription=document.querySelector('meta[name="description"]');
+ if(metaDescription){
+  const raw=metaDescription.dataset.originalContent||metaDescription.getAttribute('content');
+  metaDescription.dataset.originalContent=raw;
+  metaDescription.setAttribute('content',language==='en'?'STELLA — a content, education and digital projects platform from Gaza to the world.':'STELLA — منصة محتوى وتعليم ومشاريع رقمية من غزة إلى العالم.');
+ }
  const btn=document.getElementById('languageBtn');if(btn)btn.textContent=language==='ar'?'EN':'عربي';
  localStorage.setItem('stella-language',language);
 }

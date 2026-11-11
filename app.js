@@ -104,3 +104,27 @@ function scrollAboutCarousel(direction){
 }
 aboutPrev?.addEventListener('click',()=>scrollAboutCarousel(-1));
 aboutNext?.addEventListener('click',()=>scrollAboutCarousel(1));
+
+/* Content page filters */
+document.querySelectorAll('[data-content-filter]').forEach(button=>{
+  button.addEventListener('click',()=>{
+    const mode=button.dataset.contentFilter;
+    document.querySelectorAll('[data-content-filter]').forEach(b=>b.classList.toggle('active',b===button));
+    document.querySelectorAll('.content-results').forEach(grid=>{
+      const cards=[...grid.querySelectorAll('.media-card,.video-card')];
+      cards.forEach(card=>{
+        const isVideo=card.classList.contains('video-card');
+        card.hidden=mode==='popular' ? !isVideo : false;
+      });
+    });
+  });
+});
+document.querySelectorAll('[data-content-search]').forEach(input=>{
+  input.addEventListener('input',()=>{
+    const query=input.value.trim().toLowerCase();
+    const page=input.closest('.content-detail');
+    page?.querySelectorAll('.media-card,.video-card,.social-post-card').forEach(card=>{
+      card.hidden=!!query && !card.textContent.toLowerCase().includes(query);
+    });
+  });
+});

@@ -75,3 +75,6 @@ body.light .founder-photo::before{background:linear-gradient(90deg,#f7f7f7 0%,rg
 body.light .founder-photo::after{
   background:radial-gradient(ellipse at center,rgba(0,0,0,.22) 0%,rgba(0,0,0,.10) 38%,transparent 74%)!important;
 }
+
+/* Permanent PF signature above the final 'a' in every STELLA wordmark */
+.logo-a{position:relative;display:inline-block}.logo-a sup{position:absolute;top:-.58em;left:50%;transform:translateX(-50%);font-size:.27em;line-height:1;font-weight:800;letter-spacing:0;color:var(--stella-blue)}

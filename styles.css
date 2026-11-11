@@ -941,3 +941,41 @@ body.light #support>a.btn.primary::after{border-color:rgba(255,255,255,.45)}
 body.light #support>a.btn.primary:hover{background:linear-gradient(115deg,#385a75,#587d9c 55%,#789bb8);box-shadow:0 18px 40px rgba(44,82,111,.27),0 0 0 5px rgba(88,125,156,.1)}
 @media(max-width:600px){#support::before{inset:14px 10px;border-radius:22px}#support>a.btn.primary{min-height:54px;padding:0 23px;font-size:15px}}
 @media(prefers-reduced-motion:reduce){#support>a.btn.primary,#support>a.btn.primary::after{transition:none}}
+
+
+/* Bilingual editorial system: consistent reading direction, rhythm and alignment */
+html[lang="ar"] body{direction:rtl;text-align:right}
+html[lang="en"] body{direction:ltr;text-align:left}
+html[lang="ar"] :is(h1,h2,h3,h4,p,li,.eyebrow,.muted,.lead){text-align:right}
+html[lang="en"] :is(h1,h2,h3,h4,p,li,.eyebrow,.muted,.lead){text-align:left}
+:is(.hero-copy,.intro,.founder,.section-head,.card,.news-card,.charity-intro,#support,#ads,#news,#join){text-align:start}
+:is(.hero-copy,.intro,.founder,.section-head,.card,.news-card,.charity-intro,#support,#ads,#news,#join) :is(h1,h2,h3,p){text-align:inherit}
+.hero-copy{max-width:820px}
+.hero-copy>.lead{max-width:38ch;line-height:1.75}
+.hero-copy>.muted{max-width:62ch;line-height:2.05}
+.intro{align-items:start}
+.intro>div,.intro>p{min-width:0}
+.intro>p{max-width:62ch;margin:0;font-size:clamp(16px,1.45vw,19px);line-height:2.1}
+.founder>div:last-child{min-width:0}
+.founder>div:last-child>p{max-width:66ch;line-height:2.05}
+.section-head{margin-bottom:26px}
+.section-head h2,.section h2{line-height:1.32;text-wrap:balance}
+.card h3{line-height:1.55;text-wrap:balance}
+.card p{line-height:1.95;max-width:62ch}
+.eyebrow{line-height:1.5}
+html[lang="ar"] .eyebrow{letter-spacing:.04em}
+html[lang="en"] .eyebrow{letter-spacing:.12em}
+html[lang="ar"] .email{direction:ltr;text-align:left;unicode-bidi:isolate}
+html[lang="en"] .email{direction:ltr;text-align:left;unicode-bidi:isolate}
+html[lang="ar"] .brand,html[lang="ar"] .footer-brand,html[lang="ar"] .logo-a{direction:ltr;unicode-bidi:isolate}
+html[lang="en"] .brand,html[lang="en"] .footer-brand,html[lang="en"] .logo-a{direction:ltr;unicode-bidi:isolate}
+@media(max-width:900px){
+ .intro{gap:28px}
+ .founder{gap:32px}
+}
+@media(max-width:600px){
+ .hero-copy>.lead{font-size:19px;line-height:1.8}
+ .hero-copy>.muted,.intro>p,.founder>div:last-child>p{font-size:15px;line-height:2}
+ .section-head{margin-bottom:20px}
+ .card p{font-size:14px;line-height:1.9}
+}

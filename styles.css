@@ -609,8 +609,8 @@ body.light .contact .email:hover{
 }
 
 
-/* Email typography: Tajawal for Arabic, Inter for English only */
-.contact .email{font-family:Inter,Arial,sans-serif;font-size:clamp(16px,1.35vw,19px);font-weight:600;letter-spacing:-.015em}
-html[lang="ar"] .contact .email{font-family:"Tajawal","Noto Sans Arabic",Arial,sans-serif;font-size:clamp(17px,1.5vw,20px);font-weight:500;letter-spacing:0}
-html[lang="en"] .contact .email{font-family:Inter,Arial,sans-serif;font-size:clamp(16px,1.35vw,19px);font-weight:600;letter-spacing:-.015em}
-@media(max-width:600px){html[lang="ar"] .contact .email{font-size:17px}html[lang="en"] .contact .email{font-size:15px}}
+/* Email typography: refined Manrope for the address, IBM Plex Sans Arabic for Arabic context */
+.contact .email{font-family:"Manrope",Inter,sans-serif;font-size:clamp(16px,1.35vw,19px);font-weight:600;letter-spacing:-.025em;font-variant-numeric:tabular-nums}
+html[lang="ar"] .contact .email{font-family:"Manrope","IBM Plex Sans Arabic",sans-serif;font-size:clamp(16px,1.4vw,19px);font-weight:600;letter-spacing:-.015em}
+html[lang="en"] .contact .email{font-family:"Manrope",Inter,sans-serif;font-size:clamp(16px,1.35vw,19px);font-weight:600;letter-spacing:-.025em}
+@media(max-width:600px){.contact .email{font-size:15px}html[lang="ar"] .contact .email{font-size:16px}}

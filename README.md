@@ -1,13 +1,15 @@
-# STELLA Responsive
-نسخة Responsive مبنية اعتماداً على التصميم المرجعي في المحادثة.
+# STELLA Final Front-End
 
-## التشغيل
-افتح `index.html` مباشرة في المتصفح.
+Final static front-end structure prepared for GitHub + Cloudflare Pages.
 
-## المقاسات
-- Desktop: تخطيط واسع بثلاثة أعمدة للأقسام المناسبة.
-- Tablet: تقليل الأعمدة والمسافات.
-- Mobile: أقسام عمودية + تمرير أفقي للدورات.
+## Files
+- `index.html` — main page and navigation structure
+- `styles.css` — responsive monochrome visual system
+- `app.js` — menu and light/dark mode
 
-## ملاحظة
-الصور في هذه النسخة placeholders لأن الصورة المرجعية لا تحتوي ملفات الصور الأصلية أو الأصول الخاصة بالمشروع. استبدلها لاحقاً داخل CSS/HTML عند توفر assets الأصلية.
+## Notes
+- Brand palette: black/white shades only; no blue.
+- Arabic/English-ready structure; Arabic is the current landing language.
+- Official contact: itsstellacompany@gmail.com
+- YouTube channels are represented in the structure; platform auto-sync and approval workflow require a backend/API integration and are not implemented by this static package.
+- The founder image is included at `assets/founder.png` and is cropped from the founder image supplied in the approved STELLA visual reference.

@@ -12,7 +12,7 @@ if(localStorage.getItem('stella-theme')==='light')document.body.classList.add('l
 
 const translations={
 'الرئيسية':'Home','من نحن':'About us','المحتوى':'Content','الكورسات والدورات':'Courses','المؤسس':'Founder','المنتجات والمشاريع':'Products & Projects',
-'التعاون والشراكات':'Partnerships','الداعمون ماليًا':'Support STELLA','الإعلانات':'Advertising','الأخبار والتحديثات':'News & Updates','انضم إلى STELLA':'Join STELLA','تواصل معنا':'Contact us','الإعدادات':'Settings','تطوير الذات':'Self-development','البودكاست':'Podcast','التاريخ والحضارات':'History & Civilizations','العربية / English':'Arabic / English','الوضع النهاري / الليلي':'Light / Dark mode',
+'التعاون والشراكات':'Partnerships','أبرز نشاطات STELLA':'Key STELLA Activities','صناعة المحتوى':'Content Creation','نصنع محتوى مفيدًا ومتعدد المجالات، من تطوير الذات والتقنية إلى التاريخ والبودكاست.':'We create useful content across self-development, technology, history and podcasts.','التعليم والتطوير':'Education & Development','نقدّم كورسات ودورات ومواد عملية تساعد على اكتساب مهارات رقمية ومهنية جديدة.':'We provide courses and practical learning materials that build digital and professional skills.','المشاريع الرقمية':'Digital Projects','نطوّر منتجات ومشاريع رقمية قابلة للنمو، ونحوّل الأفكار إلى تجارب ومنتجات حقيقية.':'We develop scalable digital products and projects, turning ideas into real experiences and products.','التعاون والشراكات':'Collaboration & Partnerships','نبني شراكات مع الشركات وصنّاع المحتوى والمبدعين لإطلاق مبادرات ومشاريع مشتركة.':'We build partnerships with companies, creators and creatives to launch joint initiatives and projects.','السابق':'Previous','التالي':'Next','التنقل بين نشاطات STELLA':'Navigate STELLA activities','الداعمون ماليًا':'Support STELLA','الإعلانات':'Advertising','الأخبار والتحديثات':'News & Updates','انضم إلى STELLA':'Join STELLA','تواصل معنا':'Contact us','الإعدادات':'Settings','تطوير الذات':'Self-development','البودكاست':'Podcast','التاريخ والحضارات':'History & Civilizations','العربية / English':'Arabic / English','الوضع النهاري / الليلي':'Light / Dark mode',
 'من غزة إلى العالم':'From Gaza to the world','شركة ولدت قديمًا، لتصنع مستقبلًا يصل إلى العالم.':'A company with roots in the past, building a future that reaches the world.',
 'منصة تجمع المحتوى، التعليم، المشاريع، التعاون والأفكار في تجربة واحدة هادئة، حديثة وقابلة للنمو.':'A platform bringing content, education, projects, partnerships and ideas together in one modern, evolving experience.',
 'اكتشف STELLA':'Discover STELLA','Born in the Past, Built for the Future.':'Born in the Past, Built for the Future.','1999 — عنصر رمزي في هوية STELLA، وليس تاريخ التأسيس.':'1999 — a symbolic part of STELLA’s identity, not its founding date.',
@@ -92,3 +92,15 @@ function setLanguage(language){
 }
 document.getElementById('languageBtn')?.addEventListener('click',()=>setLanguage(document.documentElement.lang==='ar'?'en':'ar'));
 setLanguage(localStorage.getItem('stella-language')||'ar');
+
+// About activities carousel
+const aboutCarousel=document.querySelector('[data-about-carousel]');
+const aboutPrev=document.querySelector('[data-about-prev]');
+const aboutNext=document.querySelector('[data-about-next]');
+function scrollAboutCarousel(direction){
+ if(!aboutCarousel)return;
+ const amount=Math.max(aboutCarousel.clientWidth*.72,260);
+ aboutCarousel.scrollBy({left:(document.documentElement.dir==='rtl'?-direction:direction)*amount,behavior:'smooth'});
+}
+aboutPrev?.addEventListener('click',()=>scrollAboutCarousel(-1));
+aboutNext?.addEventListener('click',()=>scrollAboutCarousel(1));

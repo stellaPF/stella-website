@@ -121,3 +121,7 @@ html[lang="en"] .footer-brand{text-align:left}
 
 /* Slightly reduce the News & Updates heading so it sits comfortably above its card */
 #news > h2{font-size:clamp(28px,4vw,48px)}
+
+
+/* Lift the News & Updates heading by 6px */
+#news > h2{transform:translateY(-6px)}

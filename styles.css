@@ -1589,3 +1589,57 @@ table { max-width: 100%; }
   body.light .nav > .desktop-nav a + a { border-inline-start-color:rgba(88,117,142,.25); }
   body.light .nav > .desktop-nav a:hover { color:#34536d; background:rgba(120,148,173,.09); }
 }
+
+
+/* Desktop-only: give the brand and visitor tools a calm, unified top-row presence */
+@media (min-width: 901px) {
+  .nav {
+    position: sticky;
+    isolation: isolate;
+    padding-top: 14px;
+    padding-bottom: 10px;
+  }
+  .nav::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 70px;
+    left: 5%;
+    right: 5%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(120,148,173,.28) 12%, rgba(120,148,173,.18) 88%, transparent);
+    pointer-events: none;
+  }
+  .nav > .brand {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    min-height: 46px;
+    padding: 5px 16px;
+    border: 1px solid rgba(120,148,173,.22);
+    border-radius: 14px;
+    background: linear-gradient(110deg, rgba(120,148,173,.09), rgba(255,255,255,.025));
+    box-shadow: inset 0 1px rgba(255,255,255,.035), 0 8px 22px rgba(0,0,0,.08);
+  }
+  .nav > .nav-actions {
+    position: relative;
+    z-index: 1;
+  }
+  .nav > .nav-actions .header-tools-box {
+    min-height: 50px;
+    padding: 5px 8px;
+    border-color: rgba(120,148,173,.38);
+    background: linear-gradient(110deg, rgba(120,148,173,.10), rgba(255,255,255,.045));
+    box-shadow: 0 10px 26px rgba(0,0,0,.13), inset 0 1px rgba(255,255,255,.045);
+  }
+  body.light .nav > .brand {
+    border-color: rgba(88,117,142,.25);
+    background: linear-gradient(110deg, rgba(120,148,173,.10), rgba(0,0,0,.015));
+    box-shadow: inset 0 1px rgba(255,255,255,.7), 0 8px 22px rgba(0,0,0,.035);
+  }
+  body.light .nav > .nav-actions .header-tools-box {
+    border-color: rgba(88,117,142,.30);
+    background: linear-gradient(110deg, rgba(120,148,173,.09), rgba(255,255,255,.76));
+  }
+}

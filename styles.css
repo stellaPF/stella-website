@@ -82,6 +82,11 @@ body.light .founder-photo::after{
 /* Slightly less rounded founder YouTube channel button */
 .founder-youtube-btn{border-radius:12px}
 
+/* Founder channel buttons: always side by side */
+.founder-channel-actions{display:flex;flex-direction:row;align-items:center;justify-content:flex-start;gap:12px;flex-wrap:nowrap}
+.founder-channel-actions .founder-youtube-btn{margin-top:22px;flex:0 1 auto;width:auto}
+@media(max-width:600px){.founder-channel-actions{flex-direction:row;gap:8px;overflow-x:auto}.founder-channel-actions .founder-youtube-btn{flex:0 0 auto;width:auto;white-space:nowrap}}
+
 /* Collaboration cards: subtle hover shade, keeping the card's dark palette */
 #collab .card.dark:hover{background:#1b1b1b;border-color:rgba(120,148,173,.28);transform:translateY(-5px)}
 
@@ -176,7 +181,3 @@ body.light .about-activity-card:hover{background:#fafafa;border-color:rgba(88,11
 @media(max-width:900px){.about-activity-card{flex-basis:calc(50% - 9px)}}
 @media(max-width:600px){.about-head{align-items:flex-start}.about-carousel-controls{margin-top:6px}.about-activity-card{flex-basis:88%;min-height:230px;padding:24px}.about-activity-card h3{font-size:21px}}
 
-/* Keep founder channel buttons side by side */
-.founder-channel-actions{display:flex;align-items:center;gap:12px;flex-wrap:nowrap}
-.founder-channel-actions .founder-youtube-btn{margin-top:22px}
-@media(max-width:600px){.founder-channel-actions{flex-wrap:wrap}.founder-channel-actions .founder-youtube-btn{width:auto;flex:1 1 100%}}

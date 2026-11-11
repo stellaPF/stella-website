@@ -381,3 +381,9 @@ body.light .header-tools-box .header-control-separator{background:rgba(88,117,14
 .header-tools-box .header-control-separator::after{width:5px;height:5px;background:var(--stella-blue);box-shadow:0 0 10px rgba(120,148,173,.65)}
 body.light .header-tools-box .header-control-separator{background:linear-gradient(to bottom,transparent,rgba(88,117,142,.75) 18%,rgba(88,117,142,.75) 82%,transparent);box-shadow:none}
 @media(max-width:600px){.header-tools-box .header-control-separator{height:25px;width:2px;flex-basis:2px;margin:0 3px}}
+
+
+/* Simple vertical separators: only between the utility controls */
+.header-tools-box .header-control-separator{width:1px;height:22px;flex:0 0 1px;margin:0 3px;background:rgba(120,148,173,.32);transform:none;box-shadow:none}
+.header-tools-box .header-control-separator::after{display:none}
+@media(max-width:600px){.header-tools-box .header-control-separator{height:20px;width:1px;flex-basis:1px;margin:0 2px}}

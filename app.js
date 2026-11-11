@@ -128,3 +128,82 @@ document.querySelectorAll('[data-content-search]').forEach(input=>{
     });
   });
 });
+
+
+/* Fullscreen carousel viewer */
+function initContentCarousels(){
+  document.querySelectorAll('[data-carousel]').forEach(carousel=>{
+    const cards=[...carousel.querySelectorAll('.carousel-card')];
+    if(!cards.length)return;
+    cards.forEach((card,index)=>{
+      card.setAttribute('tabindex','0');
+      card.setAttribute('role','button');
+      card.setAttribute('aria-label',`Carousel slide ${index+1}`);
+      card.addEventListener('click',()=>openCarouselViewer(cards,index));
+      card.addEventListener('keydown',e=>{
+        if(e.key==='Enter'||e.key===' '){e.preventDefault();openCarouselViewer(cards,index)}
+      });
+    });
+  });
+}
+function openCarouselViewer(cards,startIndex){
+  let index=startIndex;
+  const viewer=document.createElement('div');
+  viewer.className='carousel-viewer';
+  viewer.setAttribute('role','dialog');
+  viewer.setAttribute('aria-modal','true');
+  viewer.innerHTML=`
+    <div class="carousel-viewer-inner">
+      <button class="carousel-viewer-close" type="button" aria-label="Close">×</button>
+      <button class="carousel-viewer-arrow carousel-viewer-prev" type="button" aria-label="Previous">‹</button>
+      <article class="carousel-viewer-slide"></article>
+      <button class="carousel-viewer-arrow carousel-viewer-next" type="button" aria-label="Next">›</button>
+      <div class="carousel-viewer-count"></div>
+    </div>`;
+  document.body.appendChild(viewer);
+  const slide=viewer.querySelector('.carousel-viewer-slide');
+  const count=viewer.querySelector('.carousel-viewer-count');
+  const close=viewer.querySelector('.carousel-viewer-close');
+  const prev=viewer.querySelector('.carousel-viewer-prev');
+  const next=viewer.querySelector('.carousel-viewer-next');
+
+  function render(){
+    const source=cards[index];
+    slide.innerHTML=source.innerHTML;
+    count.textContent=`${index+1} / ${cards.length}`;
+    const rtl=document.documentElement.dir==='rtl';
+    prev.textContent=rtl?'→':'←';
+    next.textContent=rtl?'←':'→';
+  }
+  function move(step){
+    index=(index+step+cards.length)%cards.length;
+    render();
+  }
+  function closeViewer(){
+    document.removeEventListener('keydown',onKey);
+    viewer.remove();
+  }
+  function onKey(e){
+    if(e.key==='Escape')closeViewer();
+    if(e.key==='ArrowLeft')move(document.documentElement.dir==='rtl'?1:-1);
+    if(e.key==='ArrowRight')move(document.documentElement.dir==='rtl'?-1:1);
+  }
+  let startX=null;
+  slide.addEventListener('touchstart',e=>{startX=e.changedTouches[0].clientX},{passive:true});
+  slide.addEventListener('touchend',e=>{
+    if(startX===null)return;
+    const delta=e.changedTouches[0].clientX-startX;
+    startX=null;
+    if(Math.abs(delta)<45)return;
+    const rtl=document.documentElement.dir==='rtl';
+    if(delta<0)move(rtl?-1:1); else move(rtl?1:-1);
+  },{passive:true});
+  prev.addEventListener('click',()=>move(document.documentElement.dir==='rtl'?1:-1));
+  next.addEventListener('click',()=>move(document.documentElement.dir==='rtl'?-1:1));
+  close.addEventListener('click',closeViewer);
+  viewer.addEventListener('click',e=>{if(e.target===viewer)closeViewer()});
+  document.addEventListener('keydown',onKey);
+  render();
+  requestAnimationFrame(()=>viewer.classList.add('open'));
+}
+initContentCarousels();

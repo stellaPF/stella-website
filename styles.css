@@ -94,3 +94,14 @@ body.light .founder-photo::after{
 
 /* Keep the exact same Latin STELLA PF wordmark direction in Arabic and English layouts */
 .brand > span,.side-brand,h1,.footer-brand{direction:ltr;unicode-bidi:isolate}
+
+
+/* Align the wordmark with each language layout while keeping its letters LTR */
+html[lang="ar"] .brand,
+html[lang="ar"] .side-brand,
+html[lang="ar"] h1,
+html[lang="ar"] .footer-brand{text-align:right}
+html[lang="en"] .brand,
+html[lang="en"] .side-brand,
+html[lang="en"] h1,
+html[lang="en"] .footer-brand{text-align:left}

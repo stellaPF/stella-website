@@ -175,3 +175,8 @@ body.light .about-activity-card{background:#fff;border-color:#ddd}
 body.light .about-activity-card:hover{background:#fafafa;border-color:rgba(88,117,142,.45)}
 @media(max-width:900px){.about-activity-card{flex-basis:calc(50% - 9px)}}
 @media(max-width:600px){.about-head{align-items:flex-start}.about-carousel-controls{margin-top:6px}.about-activity-card{flex-basis:88%;min-height:230px;padding:24px}.about-activity-card h3{font-size:21px}}
+
+/* Keep founder channel buttons side by side */
+.founder-channel-actions{display:flex;align-items:center;gap:12px;flex-wrap:nowrap}
+.founder-channel-actions .founder-youtube-btn{margin-top:22px}
+@media(max-width:600px){.founder-channel-actions{flex-wrap:wrap}.founder-channel-actions .founder-youtube-btn{width:auto;flex:1 1 100%}}

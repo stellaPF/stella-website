@@ -680,3 +680,17 @@ body.light .side-menu .close-btn{color:#38566d;background:#edf2f6;border-color:#
  .side-divider{margin:8px 2px}
 }
 @media(prefers-reduced-motion:reduce){.side-menu{transition:none}.side-group a,.side-group summary{transition:none}}
+
+
+/* Improve sidebar text size and readability */
+.side-group-title{font-size:12px;letter-spacing:.8px}
+.side-group a,.side-group summary{font-size:15px;line-height:1.55;min-height:41px}
+.side-group details a{font-size:14px;line-height:1.5;min-height:36px}
+.side-settings-group a{font-size:14px}
+.side-brand small{font-size:11px}
+@media(max-width:600px){
+ .side-group-title{font-size:12px}
+ .side-group a,.side-group summary{font-size:14px;min-height:39px}
+ .side-group details a{font-size:13px;min-height:34px}
+ .side-settings-group a{font-size:13px}
+}

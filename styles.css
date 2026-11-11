@@ -1120,3 +1120,59 @@ html[dir="rtl"] .nav .page-back-arrow{transform:scaleX(-1)}
 body.light .nav .page-back{color:#263d50;background:rgba(88,125,156,.08);border-color:rgba(88,125,156,.32)}
 body.light .nav .page-back:hover{background:rgba(88,125,156,.15);border-color:rgba(88,125,156,.6)}
 @media(max-width:600px){.nav .page-back{min-width:78px;min-height:40px;padding:0 11px;gap:7px;font-size:12px}}
+
+
+/* Footer links: clearer, balanced and responsive */
+.site-footer,
+footer {
+  text-align: center;
+}
+.site-footer .footer-links,
+footer .footer-links,
+.site-footer nav,
+footer nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin: 18px auto 12px;
+  padding: 0 16px;
+}
+.site-footer a,
+footer a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  line-height: 1.6;
+  transition: background-color .2s ease, color .2s ease, transform .2s ease;
+}
+.site-footer a:hover,
+footer a:hover {
+  background: rgba(70, 130, 210, .12);
+  transform: translateY(-1px);
+}
+.site-footer a:focus-visible,
+footer a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+@media (max-width: 600px) {
+  .site-footer .footer-links,
+  footer .footer-links,
+  .site-footer nav,
+  footer nav {
+    gap: 6px 8px;
+    margin: 14px auto 10px;
+  }
+  .site-footer a,
+  footer a {
+    min-height: 40px;
+    padding: 7px 10px;
+    font-size: .94rem;
+  }
+}

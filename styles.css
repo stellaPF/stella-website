@@ -105,3 +105,7 @@ html[lang="en"] .brand,
 html[lang="en"] .side-brand,
 html[lang="en"] h1,
 html[lang="en"] .footer-brand{text-align:left}
+
+
+/* Lift the hero tagline slightly */
+.hero-copy > .eyebrow{transform:translateY(-6px)}

@@ -1341,3 +1341,37 @@ table { max-width: 100%; }
   .feature-section > .btn { align-self: stretch; text-align: center; }
   .feature-section > .muted { margin-bottom: 20px; }
 }
+
+
+/* Charity and support cards: move the vertical accent to the card edge and contain all content */
+.feature-section::before {
+  inset: 18px 18px 18px auto;
+  width: 3px;
+  border-radius: 999px;
+  opacity: .72;
+}
+.feature-section > .eyebrow,
+.feature-section > h2,
+.feature-section > .muted,
+.feature-section > .btn {
+  position: relative;
+  max-width: 100%;
+}
+.feature-section > .eyebrow,
+.feature-section > h2,
+.feature-section > .muted {
+  width: 100%;
+  text-align: start;
+}
+.feature-section > .muted {
+  overflow-wrap: anywhere;
+}
+.feature-section > .btn {
+  align-self: flex-start;
+}
+@media (max-width: 600px) {
+  .feature-section { padding-inline: 26px; }
+  .feature-section::before { inset: 16px 12px 16px auto; }
+  .feature-section > h2 { font-size: clamp(30px, 8vw, 42px); line-height: 1.35; }
+  .feature-section > .muted { font-size: 15px; line-height: 1.9; }
+}

@@ -405,3 +405,16 @@ body.light .header-tools-box .shop-btn:hover{color:var(--stella-blue)}
 body.light .vip-card{background:rgba(255,255,255,.62);border-color:rgba(88,117,142,.25)}
 body.light .vip-card h2{color:#44515b}
 @media(max-width:600px){.vip-section{padding:12px 22px}.vip-card{padding:14px 16px;gap:12px}.vip-card h2{font-size:12px;line-height:1.7}}
+
+
+/* Premium VIP highlight */
+.vip-section{padding-top:22px;padding-bottom:24px}
+.vip-card{position:relative;max-width:1100px;margin:0 auto;padding:22px 28px;border:1px solid rgba(120,148,173,.58);border-radius:18px;background:linear-gradient(135deg,rgba(120,148,173,.16),rgba(255,255,255,.045) 55%,rgba(120,148,173,.1));box-shadow:0 14px 42px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.08);overflow:hidden}
+.vip-card::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--stella-blue);box-shadow:0 0 18px rgba(120,148,173,.7)}
+.vip-card .eyebrow{display:inline-flex;align-items:center;justify-content:center;min-width:64px;height:30px;margin:0;padding:0 12px;border:1px solid rgba(120,148,173,.7);border-radius:999px;background:rgba(120,148,173,.18);color:#d7e0e6;font-size:12px;font-weight:900;letter-spacing:1.8px;box-shadow:0 0 18px rgba(120,148,173,.18)}
+.vip-card h2{margin:9px 0 0;font-size:15px;font-weight:800;color:#e1e7eb;letter-spacing:.1px}
+.vip-card h2::after{content:"";display:block;width:54px;height:1px;margin-top:10px;background:rgba(120,148,173,.65)}
+body.light .vip-card{background:linear-gradient(135deg,rgba(120,148,173,.13),rgba(255,255,255,.78));border-color:rgba(88,117,142,.42);box-shadow:0 12px 34px rgba(0,0,0,.08)}
+body.light .vip-card .eyebrow{background:rgba(120,148,173,.12);color:#4d6475}
+body.light .vip-card h2{color:#34434e}
+@media(max-width:600px){.vip-section{padding:16px 22px 20px}.vip-card{padding:18px 20px;border-radius:16px}.vip-card h2{font-size:12px;line-height:1.8}}

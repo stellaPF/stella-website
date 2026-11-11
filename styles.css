@@ -9,3 +9,7 @@
 /* Founder section: balanced portrait and readable biography */
 @media(min-width:901px){.founder{grid-template-columns:minmax(300px,.9fr) minmax(0,1.1fr);column-gap:clamp(42px,6vw,88px);align-items:center}.founder-photo{width:100%;max-width:480px;min-height:560px;justify-self:center;margin-inline:auto;border-radius:26px}.founder-photo img{width:100%;height:100%;object-fit:contain;object-position:center bottom;transform:scale(.98);filter:none}.founder>div:last-child{min-width:0;max-width:680px}.founder>div:last-child p{max-width:64ch;line-height:2}}
 @media(max-width:900px){.founder{grid-template-columns:minmax(0,1fr);gap:32px}.founder-photo{width:100%;max-width:520px;min-height:420px;max-height:560px;margin-inline:auto}.founder>div:last-child{width:100%}}
+
+/* Fine-tune founder portrait height and top alignment */
+@media(min-width:901px){.founder{align-items:start}.founder-photo{align-self:start;height:480px;min-height:0;max-height:480px;margin-top:0}.founder-photo img{height:100%;object-fit:contain;object-position:center top;transform:none}.founder>div:last-child{align-self:start}}
+@media(max-width:900px){.founder-photo{height:460px;min-height:0;object-position:center top}.founder-photo img{object-position:center top}}

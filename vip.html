@@ -6,11 +6,48 @@
 <title>VIP — STELLA</title>
 <link rel="stylesheet" href="styles.css">
 <style>
-.vip-soon-page{min-height:100vh;display:grid;place-items:center;padding:32px;background:var(--STELLA-bg,#0b0f13);color:inherit}
-.vip-soon-card{width:min(620px,92vw);padding:48px 28px;text-align:center;border:1px solid rgba(120,148,173,.4);border-radius:24px;background:rgba(255,255,255,.035);box-shadow:0 20px 70px rgba(0,0,0,.25)}
-.vip-soon-badge{display:inline-flex;padding:8px 16px;border:1px solid rgba(120,148,173,.55);border-radius:999px;color:var(--STELLA-blue);font-weight:900;letter-spacing:1.5px}
-.vip-soon-card h1{margin:22px 0 8px;font-size:34px}
-.vip-soon-card p{margin:0;color:#9ca9b2;font-size:14px}
+.vip-soon-page{
+ min-height:calc(100svh - 76px);box-sizing:border-box;
+ display:grid;place-items:center;
+ padding:clamp(28px,6vh,64px) 20px;
+ position:relative;isolation:isolate;overflow:hidden;
+ background:radial-gradient(ellipse at 50% 42%,rgba(85,132,169,.13),transparent 55%),var(--STELLA-bg,#0b0f13);
+ color:inherit
+}
+.vip-soon-page::before{
+ content:"";position:absolute;inset:7% 8%;z-index:-1;pointer-events:none;
+ border:1px solid rgba(120,148,173,.10);border-radius:36px;
+ background:radial-gradient(circle at 50% 50%,rgba(120,148,173,.06),transparent 65%)
+}
+.vip-soon-card{
+ position:relative;width:min(620px,100%);box-sizing:border-box;
+ display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;
+ padding:clamp(38px,7vw,66px) clamp(24px,6vw,54px);
+ text-align:center;border:1px solid rgba(145,185,217,.42);border-radius:30px;
+ background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));
+ box-shadow:0 28px 85px rgba(0,0,0,.34),inset 0 1px rgba(255,255,255,.09),0 0 55px rgba(100,151,190,.08);
+ overflow:hidden
+}
+.vip-soon-card::before{content:"VIP";position:absolute;inset:auto 0 4px;text-align:center;font-size:clamp(100px,22vw,190px);font-weight:900;letter-spacing:.12em;line-height:1;color:rgba(145,185,217,.035);pointer-events:none}
+.vip-soon-badge{
+ position:relative;display:inline-flex;align-items:center;justify-content:center;
+ padding:9px 24px;border:1px solid rgba(145,185,217,.6);border-radius:999px;
+ background:linear-gradient(120deg,rgba(145,185,217,.18),rgba(145,185,217,.05));
+ color:var(--STELLA-blue,#91b9d9);font-size:13px;font-weight:900;letter-spacing:.2em;line-height:1.5
+}
+.vip-soon-card h1{position:relative;margin:0;font-size:clamp(30px,5.4vw,46px);font-weight:850;line-height:1.55;letter-spacing:0;text-wrap:balance}
+.vip-soon-card p{position:relative;max-width:36ch;margin:0;color:var(--muted,#aab6c0);font-size:clamp(15px,2vw,18px);line-height:2}
+body.light .vip-soon-page{background:radial-gradient(ellipse at 50% 42%,rgba(88,125,156,.13),transparent 58%),var(--STELLA-bg,#f3f6f8)}
+body.light .vip-soon-card{border-color:rgba(88,125,156,.34);background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(238,244,248,.91));box-shadow:0 24px 70px rgba(39,67,88,.13),inset 0 1px #fff}
+body.light .vip-soon-card::before{color:rgba(68,104,132,.045)}
+body.light .vip-soon-card p{color:#607181}
+@media(max-width:600px){
+ .vip-soon-page{min-height:calc(100svh - 64px);padding:26px 16px}
+ .vip-soon-page::before{inset:4% 3%;border-radius:24px}
+ .vip-soon-card{padding:42px 22px;border-radius:24px;gap:16px}
+ .vip-soon-card h1{font-size:clamp(27px,8vw,36px);line-height:1.6}
+}
+@media(prefers-reduced-motion:reduce){.vip-soon-card{transition:none}}
 </style>
 </head>
 <body>

@@ -1589,3 +1589,280 @@ table { max-width: 100%; }
   body.light .nav > .desktop-nav a + a { border-inline-start-color:rgba(88,117,142,.25); }
   body.light .nav > .desktop-nav a:hover { color:#34536d; background:rgba(120,148,173,.09); }
 }
+
+
+/* Desktop-only: give the brand and visitor tools a calm, unified top-row presence */
+@media (min-width: 901px) {
+  .nav {
+    position: sticky;
+    isolation: isolate;
+    padding-top: 14px;
+    padding-bottom: 10px;
+  }
+  .nav::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 70px;
+    left: 5%;
+    right: 5%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(120,148,173,.28) 12%, rgba(120,148,173,.18) 88%, transparent);
+    pointer-events: none;
+  }
+  .nav > .brand {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    min-height: 46px;
+    padding: 5px 16px;
+    border: 1px solid rgba(120,148,173,.22);
+    border-radius: 14px;
+    background: linear-gradient(110deg, rgba(120,148,173,.09), rgba(255,255,255,.025));
+    box-shadow: inset 0 1px rgba(255,255,255,.035), 0 8px 22px rgba(0,0,0,.08);
+  }
+  .nav > .nav-actions {
+    position: relative;
+    z-index: 1;
+  }
+  .nav > .nav-actions .header-tools-box {
+    min-height: 50px;
+    padding: 5px 8px;
+    border-color: rgba(120,148,173,.38);
+    background: linear-gradient(110deg, rgba(120,148,173,.10), rgba(255,255,255,.045));
+    box-shadow: 0 10px 26px rgba(0,0,0,.13), inset 0 1px rgba(255,255,255,.045);
+  }
+  body.light .nav > .brand {
+    border-color: rgba(88,117,142,.25);
+    background: linear-gradient(110deg, rgba(120,148,173,.10), rgba(0,0,0,.015));
+    box-shadow: inset 0 1px rgba(255,255,255,.7), 0 8px 22px rgba(0,0,0,.035);
+  }
+  body.light .nav > .nav-actions .header-tools-box {
+    border-color: rgba(88,117,142,.30);
+    background: linear-gradient(110deg, rgba(120,148,173,.09), rgba(255,255,255,.76));
+  }
+}
+
+
+/* Desktop logo box: align its proportions and wordmark scale with the navigation typography */
+@media (min-width: 901px) {
+  .nav > .brand {
+    min-height: 40px;
+    padding: 3px 13px;
+    border-radius: 11px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: .15px;
+    line-height: 1.2;
+    box-shadow: inset 0 1px rgba(255,255,255,.035), 0 5px 14px rgba(0,0,0,.06);
+  }
+  .nav > .brand b,
+  .nav > .brand span {
+    font-weight: 700;
+  }
+  body.light .nav > .brand {
+    box-shadow: inset 0 1px rgba(255,255,255,.7), 0 5px 14px rgba(0,0,0,.025);
+  }
+}
+
+
+/* Desktop-only: enlarge the header search and let the tools panel extend toward the wordmark */
+@media (min-width: 901px) {
+  .nav > .nav-actions {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-inline-start: 0;
+  }
+  .nav > .nav-actions .header-tools-box {
+    width: 100%;
+    min-width: 0;
+    justify-content: flex-start;
+    gap: 9px;
+    padding-inline: 10px;
+  }
+  .nav > .nav-actions .header-search-wrap {
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 180px;
+    max-width: none;
+    height: 38px;
+    padding-inline: 13px;
+  }
+  .nav > .nav-actions .header-search-input {
+    width: 100%;
+    min-width: 0;
+    font-size: 13px;
+  }
+}
+
+
+/* Homepage refinement: place the Born statement directly beneath the discovery actions */
+@media (min-width: 901px) {
+  main#home > .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  main#home .hero-copy {
+    width: min(100%, 900px);
+    max-width: 900px;
+    margin-inline: auto;
+  }
+}
+main#home .hero-card {
+  width: min(100%, 720px);
+  min-height: 118px;
+  margin-top: clamp(24px, 3vw, 38px);
+  padding: clamp(20px, 3vw, 30px);
+  border: 1px solid rgba(120,148,173,.3);
+  border-radius: 20px;
+  background: linear-gradient(120deg,rgba(120,148,173,.13),rgba(255,255,255,.035));
+  box-shadow: 0 18px 46px rgba(0,0,0,.14),inset 0 1px rgba(255,255,255,.05);
+  backdrop-filter: blur(16px);
+}
+main#home .hero-card .mark {
+  flex: 0 0 auto;
+  line-height: 1;
+}
+main#home .hero-card strong {
+  display: block;
+  line-height: 1.55;
+  letter-spacing: .01em;
+}
+main#home .hero-card small {
+  display: block;
+  margin-top: 7px;
+  line-height: 1.8;
+  color: #aeb8c2;
+}
+main#home > .section {
+  padding-block: clamp(64px, 8vw, 104px);
+}
+main#home > .section > h2,
+main#home .section-head h2 {
+  line-height: 1.45;
+  text-wrap: balance;
+}
+main#home .section-head {
+  margin-bottom: clamp(22px, 3vw, 34px);
+}
+main#home .card,
+main#home .about-activity-card,
+main#home .vip-card {
+  border-color: rgba(120,148,173,.2);
+  box-shadow: 0 14px 38px rgba(0,0,0,.10);
+}
+main#home .card {
+  border-radius: 20px;
+}
+main#home .card h3,
+main#home .about-activity-card h3 {
+  line-height: 1.65;
+}
+main#home .card p,
+main#home .about-activity-card p {
+  line-height: 1.95;
+}
+main#home .cta-row {
+  align-items: center;
+  gap: 12px;
+}
+main#home .cta-row .btn {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+body.light main#home .hero-card {
+  background: linear-gradient(120deg,rgba(120,148,173,.12),rgba(255,255,255,.88));
+  border-color: rgba(88,117,142,.26);
+  box-shadow: 0 18px 42px rgba(0,0,0,.07),inset 0 1px rgba(255,255,255,.8);
+}
+body.light main#home .hero-card small {
+  color: #667582;
+}
+@media (max-width: 900px) {
+  main#home .hero-card {
+    margin-top: 24px;
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  main#home .hero-card {
+    min-height: 0;
+    gap: 14px;
+    padding: 18px;
+    border-radius: 16px;
+  }
+  main#home .hero-card .mark {
+    font-size: 54px;
+  }
+  main#home .hero-card strong {
+    font-size: 15px;
+  }
+  main#home .hero-card small {
+    font-size: 11px;
+  }
+}
+
+
+/* Desktop homepage: tighten excessive vertical whitespace around copy and cards */
+@media (min-width: 901px) {
+  main#home > .hero {
+    min-height: auto;
+    padding-top: clamp(34px, 4.2vh, 58px);
+    padding-bottom: clamp(38px, 4.5vh, 62px);
+    row-gap: 24px;
+  }
+  main#home .hero-copy h1 {
+    margin-top: 12px;
+    margin-bottom: 16px;
+    line-height: 1;
+  }
+  main#home .hero-copy > .eyebrow {
+    margin-bottom: 14px;
+  }
+  main#home .hero-copy > .lead {
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  main#home .hero-copy > .muted {
+    line-height: 1.65;
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+  main#home .hero-copy .cta-row {
+    margin-top: 22px;
+  }
+  main#home .hero-card {
+    min-height: 88px;
+    margin-top: 20px;
+    padding: 18px 24px;
+    gap: 18px;
+  }
+  main#home .hero-card strong {
+    line-height: 1.4;
+  }
+  main#home .hero-card small {
+    margin-top: 4px;
+    line-height: 1.55;
+  }
+  main#home > .section {
+    padding-top: clamp(44px, 5vw, 64px);
+    padding-bottom: clamp(44px, 5vw, 64px);
+  }
+  main#home .section-head {
+    margin-bottom: 22px;
+  }
+  main#home .feature-section {
+    min-height: 220px;
+    padding: 30px 34px;
+  }
+  main#home .feature-section h2 {
+    margin-top: 4px;
+    margin-bottom: 10px;
+  }
+  main#home .feature-section > .muted {
+    margin-bottom: 16px;
+    line-height: 1.7;
+  }
+}

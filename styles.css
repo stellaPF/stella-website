@@ -1803,3 +1803,66 @@ body.light main#home .hero-card small {
     font-size: 11px;
   }
 }
+
+
+/* Desktop homepage: tighten excessive vertical whitespace around copy and cards */
+@media (min-width: 901px) {
+  main#home > .hero {
+    min-height: auto;
+    padding-top: clamp(34px, 4.2vh, 58px);
+    padding-bottom: clamp(38px, 4.5vh, 62px);
+    row-gap: 24px;
+  }
+  main#home .hero-copy h1 {
+    margin-top: 12px;
+    margin-bottom: 16px;
+    line-height: 1;
+  }
+  main#home .hero-copy > .eyebrow {
+    margin-bottom: 14px;
+  }
+  main#home .hero-copy > .lead {
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  main#home .hero-copy > .muted {
+    line-height: 1.65;
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+  main#home .hero-copy .cta-row {
+    margin-top: 22px;
+  }
+  main#home .hero-card {
+    min-height: 88px;
+    margin-top: 20px;
+    padding: 18px 24px;
+    gap: 18px;
+  }
+  main#home .hero-card strong {
+    line-height: 1.4;
+  }
+  main#home .hero-card small {
+    margin-top: 4px;
+    line-height: 1.55;
+  }
+  main#home > .section {
+    padding-top: clamp(44px, 5vw, 64px);
+    padding-bottom: clamp(44px, 5vw, 64px);
+  }
+  main#home .section-head {
+    margin-bottom: 22px;
+  }
+  main#home .feature-section {
+    min-height: 220px;
+    padding: 30px 34px;
+  }
+  main#home .feature-section h2 {
+    margin-top: 4px;
+    margin-bottom: 10px;
+  }
+  main#home .feature-section > .muted {
+    margin-bottom: 16px;
+    line-height: 1.7;
+  }
+}

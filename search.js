@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded',()=>{
-  const btn=document.getElementById('searchBtn'), overlay=document.getElementById('searchOverlay'), close=document.getElementById('searchClose'), input=document.getElementById('siteSearchInput'), results=document.getElementById('siteSearchResults');
+  const btn=document.getElementById('headerSearchInput'), overlay=document.getElementById('searchOverlay'), close=document.getElementById('searchClose'), input=document.getElementById('siteSearchInput'), results=document.getElementById('siteSearchResults');
   if(!btn||!overlay||!close||!input||!results)return;
   const open=()=>{overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');setTimeout(()=>input.focus(),40)};
   const shut=()=>{overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');input.value='';render('')};
@@ -12,6 +12,6 @@ document.addEventListener('DOMContentLoaded',()=>{
     results.querySelectorAll('a').forEach(a=>a.addEventListener('click',shut));
   };
   const escapeHtml=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
-  btn.addEventListener('click',open);close.addEventListener('click',shut);overlay.addEventListener('click',e=>{if(e.target===overlay)shut()});input.addEventListener('input',e=>render(e.target.value));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&overlay.classList.contains('open'))shut()});
+  btn.addEventListener('focus',open);btn.addEventListener('click',open);close.addEventListener('click',shut);overlay.addEventListener('click',e=>{if(e.target===overlay)shut()});input.addEventListener('input',e=>render(e.target.value));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&overlay.classList.contains('open'))shut()});
   render('');
 });

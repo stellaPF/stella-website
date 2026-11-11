@@ -289,3 +289,7 @@ body.light .carousel-viewer-close{color:#111;border-color:rgba(0,0,0,.18);backgr
   .carousel-viewer-next{inset-inline-end:6px}
   .carousel-viewer-close{top:6px;inset-inline-end:6px}
 }
+
+
+/* Fixed S + PF channel mark: always visually anchored to the right */
+.stella-mark{position:relative;display:inline-block;min-width:24px;padding-top:7px;font-weight:900;line-height:1;color:inherit;direction:ltr;unicode-bidi:isolate;text-align:right}.stella-mark sup{position:absolute;top:0;right:0;font-size:.38em;line-height:1;font-weight:900;letter-spacing:.02em}.hero-card .stella-mark{min-width:30px;font-size:30px}.post-avatar .stella-mark{min-width:24px;font-size:17px}.post-avatar{display:grid;place-items:center;text-align:right;direction:ltr;unicode-bidi:isolate}

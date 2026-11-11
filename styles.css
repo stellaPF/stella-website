@@ -448,3 +448,9 @@ body.light .about-arrow:hover{color:#38566d;background:rgba(120,148,173,.18)}
 .header-tools-box{align-items:center}
 .header-tools-box .shop-btn{align-self:center;display:grid;place-items:center;line-height:1;padding:0;margin:0}
 .header-tools-box .shop-btn svg{display:block;margin:auto}
+
+
+/* Matching activity arrows: identical icon treatment, mirrored direction */
+.about-arrow svg{display:block;width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.about-arrow[data-about-prev] svg{transform:scaleX(-1)}
+.about-arrow[data-about-next] svg{transform:none}

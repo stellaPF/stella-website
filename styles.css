@@ -483,3 +483,73 @@ body.light .nav{
 body.light .nav::after{
   background:linear-gradient(to bottom,rgba(255,255,255,.76),rgba(255,255,255,0));
 }
+
+
+/* Consistent readable hover, pressed and keyboard states in both themes */
+.card,
+.carousel-card,
+.about-activity-card,
+.content-link-card,
+.vip-card,
+.site-search-result,
+.content-filter-btn,
+.btn,
+.founder-social-btn,
+.founder-youtube-btn{
+  transition:background-color .22s ease,border-color .22s ease,color .22s ease,box-shadow .22s ease,transform .22s ease;
+}
+.card:hover,.card:focus-within,.card:active,
+.carousel-card:hover,.carousel-card:focus-within,.carousel-card:active,
+.about-activity-card:hover,.about-activity-card:focus-within,.about-activity-card:active,
+.content-link-card:hover,.content-link-card:focus-within,.content-link-card:active,
+.vip-card:hover,.vip-card:focus-within,.vip-card:active{
+  background-color:#1b2229;
+  border-color:rgba(120,148,173,.58);
+  color:#f5f7f9;
+}
+.card:hover h1,.card:hover h2,.card:hover h3,.card:hover p,
+.card:focus-within h1,.card:focus-within h2,.card:focus-within h3,.card:focus-within p,
+.carousel-card:hover,.about-activity-card:hover,.content-link-card:hover,.vip-card:hover{
+  color:inherit;
+}
+.card:hover p,.card:focus-within p{color:#c4ccd3}
+body.light .card:hover,body.light .card:focus-within,body.light .card:active,
+body.light .carousel-card:hover,body.light .carousel-card:focus-within,body.light .carousel-card:active,
+body.light .about-activity-card:hover,body.light .about-activity-card:focus-within,body.light .about-activity-card:active,
+body.light .content-link-card:hover,body.light .content-link-card:focus-within,body.light .content-link-card:active,
+body.light .vip-card:hover,body.light .vip-card:focus-within,body.light .vip-card:active{
+  background-color:#eaf0f4;
+  border-color:#7894ad;
+  color:#17232d;
+  box-shadow:0 14px 34px rgba(35,55,72,.12);
+}
+body.light .card:hover p,body.light .card:focus-within p,
+body.light .card:hover .muted,body.light .card:focus-within .muted,
+body.light .carousel-card:hover p,body.light .about-activity-card:hover p,
+body.light .vip-card:hover p{color:#43515d}
+.content-filter-btn:hover,.content-filter-btn:focus-visible,
+.content-filter-btn.active{
+  background:#7894ad;
+  border-color:#7894ad;
+  color:#081018;
+}
+body.light .content-filter-btn:hover,body.light .content-filter-btn:focus-visible,
+body.light .content-filter-btn.active{
+  background:#dce7ee;
+  border-color:#7894ad;
+  color:#17232d;
+}
+.btn:active,.icon-btn:active,.founder-social-btn:active,.founder-youtube-btn:active{
+  filter:brightness(1.08);
+  transform:translateY(0) scale(.98);
+}
+body.light .btn:not(.primary):hover,body.light .founder-social-btn:hover,
+body.light .founder-youtube-btn:hover{
+  background:#eaf0f4;
+  border-color:#7894ad;
+  color:#17232d;
+}
+:where(a,button,[role="button"],summary,input,select,textarea):focus-visible{
+  outline:2px solid #7894ad;
+  outline-offset:3px;
+}

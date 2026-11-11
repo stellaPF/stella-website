@@ -1235,3 +1235,32 @@ footer a:focus-visible {
   .stella-footer .footer-links { gap: 5px; margin-top: 17px; padding-top: 12px; }
   .stella-footer .footer-links a { padding: 7px 10px; font-size: 12px; }
 }
+
+
+/* Responsive safety net: phone, tablet and desktop */
+*, *::before, *::after { box-sizing: border-box; }
+html { width: 100%; max-width: 100%; }
+body { width: 100%; max-width: 100%; overflow-x: clip; }
+img, picture, video, iframe, svg, canvas {
+  max-width: 100%;
+}
+img, video, canvas { height: auto; }
+pre, code { max-width: 100%; overflow-x: auto; }
+p, a, h1, h2, h3, h4, li, button {
+  overflow-wrap: anywhere;
+}
+section, article, main, header, footer, nav, aside,
+.container, .content, .card, .grid, .row {
+  min-width: 0;
+}
+table { max-width: 100%; }
+@media (max-width: 900px) {
+  .container, .content, main {
+    max-width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  body { min-width: 0; }
+  input, select, textarea, button { max-width: 100%; }
+  .stella-footer { width: 100%; }
+}

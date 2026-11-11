@@ -454,3 +454,7 @@ body.light .about-arrow:hover{color:#38566d;background:rgba(120,148,173,.18)}
 .about-arrow svg{display:block;width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
 .about-arrow[data-about-prev] svg{transform:scaleX(-1)}
 .about-arrow[data-about-next] svg{transform:none}
+
+/* One fixed quote glyph above the S in written STELLA mentions; the word itself stays unchanged. */
+.stella-marked-word{display:inline-block;position:relative;direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+.stella-mark-over{position:absolute;left:-.015em;top:-.58em;font-family:Georgia,serif;font-size:.62em;font-weight:700;line-height:1;transform:rotate(-14deg);transform-origin:center;pointer-events:none}

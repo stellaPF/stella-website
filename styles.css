@@ -725,3 +725,26 @@ body.light .side-group details[open]>summary{
   border-color:#c5d4df;
   color:#172d3d;
 }
+
+
+/* Replace sidebar bullets with clear navigation icons */
+.side-group a::before{content:"";width:18px;height:18px;flex:0 0 18px;margin-left:10px;background:currentColor;opacity:.82;mask-size:contain;mask-position:center;mask-repeat:no-repeat;-webkit-mask-size:contain;-webkit-mask-position:center;-webkit-mask-repeat:no-repeat}
+.side-group a[href="#home"]::before{mask-image:var(--i-home);-webkit-mask-image:var(--i-home)}
+.side-group a[href="#about"]::before{mask-image:var(--i-info);-webkit-mask-image:var(--i-info)}
+.side-group a[href="#founder"]::before{mask-image:var(--i-user);-webkit-mask-image:var(--i-user)}
+.side-group a[href="#content"]::before,.side-group a[href="#self"]::before,.side-group a[href="#podcast"]::before,.side-group a[href="#history"]::before{mask-image:var(--i-book);-webkit-mask-image:var(--i-book)}
+.side-group a[href="#courses"]::before{mask-image:var(--i-cap);-webkit-mask-image:var(--i-cap)}
+.side-group a[href="#news"]::before{mask-image:var(--i-news);-webkit-mask-image:var(--i-news)}
+.side-group a[href="#projects"]::before,.side-group a[href="shop.html"]::before{mask-image:var(--i-grid);-webkit-mask-image:var(--i-grid)}
+.side-group a[href="#collab"]::before{mask-image:var(--i-handshake);-webkit-mask-image:var(--i-handshake)}
+.side-group a[href="charity.html"]::before{mask-image:var(--i-heart);-webkit-mask-image:var(--i-heart)}
+.side-group a[href="#join"]::before{mask-image:var(--i-users);-webkit-mask-image:var(--i-users)}
+.side-group a[href="#support"]::before{mask-image:var(--i-heart-hand);-webkit-mask-image:var(--i-heart-hand)}
+.side-group a[href="#ads"]::before{mask-image:var(--i-megaphone);-webkit-mask-image:var(--i-megaphone)}
+.side-group a[href="#contact"]::before{mask-image:var(--i-mail);-webkit-mask-image:var(--i-mail)}
+.side-group a[href="#lang"]::before{mask-image:var(--i-globe);-webkit-mask-image:var(--i-globe)}
+.side-group a[href="#"]::before{mask-image:var(--i-moon);-webkit-mask-image:var(--i-moon)}
+.side-group details>summary::before{content:"";width:18px;height:18px;flex:0 0 18px;margin-left:10px;background:currentColor;opacity:.82;mask:var(--i-compass) center/contain no-repeat;-webkit-mask:var(--i-compass) center/contain no-repeat}
+.side-group details a::before{width:7px;height:7px;flex-basis:7px;margin-left:10px;mask:none;-webkit-mask:none;border:1px solid currentColor;border-radius:2px;background:transparent;opacity:.7}
+.side-group a:hover::before,.side-group summary:hover::before{opacity:1}
+@media(max-width:600px){.side-group a::before,.side-group details>summary::before{width:17px;height:17px;flex-basis:17px}}

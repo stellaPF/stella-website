@@ -206,3 +206,12 @@ body.light .founder-social-btn:hover{background:rgba(120,148,173,.16);color:#111
   .founder-social-actions{justify-content:center;gap:8px;margin-top:12px}
   .founder-social-btn{width:34px;height:34px;font-size:14px;border-radius:9px}
 }
+
+/* Founder social links */
+.founder-socials{display:flex;align-items:center;justify-content:flex-start;gap:10px;margin-top:14px;direction:ltr}
+.founder-social-btn{width:38px;height:38px;display:grid;place-items:center;border:1px solid rgba(120,148,173,.42);border-radius:10px;background:rgba(120,148,173,.08);color:var(--stella-blue);font-size:15px;font-weight:800;transition:transform .2s,background .2s,border-color .2s,color .2s}
+.founder-social-btn:hover{transform:translateY(-2px);background:rgba(120,148,173,.18);border-color:var(--stella-blue);color:#fff}
+body.light .founder-social-btn{background:rgba(120,148,173,.07);color:#58758e;border-color:rgba(88,117,142,.35)}
+body.light .founder-social-btn:hover{background:rgba(120,148,173,.15);color:#111}
+@media(max-width:900px){.founder-socials{justify-content:center}}
+@media(max-width:600px){.founder-socials{gap:8px}.founder-social-btn{width:34px;height:34px;font-size:14px}}

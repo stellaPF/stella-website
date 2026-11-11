@@ -78,3 +78,6 @@ body.light .founder-photo::after{
 
 /* Permanent PF signature above the final 'a' in every STELLA wordmark */
 .logo-a{position:relative;display:inline-block}.logo-a sup{position:absolute;top:-.58em;left:50%;transform:translateX(-50%);font-size:.27em;line-height:1;font-weight:800;letter-spacing:0;color:var(--stella-blue)}
+
+/* Slightly less rounded founder YouTube channel button */
+.founder-youtube-btn{border-radius:12px}

@@ -50,3 +50,28 @@ body.light .founder-photo::before{background:linear-gradient(90deg,#f7f7f7 0%,rg
   mask-image:linear-gradient(to right,transparent 0%,#000 5%,#000 95%,transparent 100%),linear-gradient(to bottom,#000 0%,#000 78%,rgba(0,0,0,.92) 85%,rgba(0,0,0,.62) 91%,rgba(0,0,0,.28) 96%,transparent 100%)!important;
   mask-mode:alpha;
 }
+
+
+/* Natural soft shadow beneath the portrait; keep the bottom edge visible */
+.founder-photo{position:relative;isolation:isolate;overflow:visible!important}
+.founder-photo::after{
+  content:""!important;
+  position:absolute!important;
+  z-index:-1!important;
+  left:12%!important;
+  right:12%!important;
+  bottom:-20px!important;
+  height:46px!important;
+  border-radius:50%!important;
+  background:radial-gradient(ellipse at center,rgba(0,0,0,.42) 0%,rgba(0,0,0,.20) 38%,transparent 74%)!important;
+  filter:blur(11px)!important;
+  box-shadow:none!important;
+  pointer-events:none!important;
+}
+.founder-photo img{
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 5%,#000 95%,transparent 100%)!important;
+  mask-image:linear-gradient(to right,transparent 0%,#000 5%,#000 95%,transparent 100%)!important;
+}
+body.light .founder-photo::after{
+  background:radial-gradient(ellipse at center,rgba(0,0,0,.22) 0%,rgba(0,0,0,.10) 38%,transparent 74%)!important;
+}

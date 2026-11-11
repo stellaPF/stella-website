@@ -117,3 +117,7 @@ html[lang="en"] .footer-brand{text-align:left}
 
 /* Create a clear visual gap between the hero tagline and STELLA wordmark */
 .hero-copy > .eyebrow{transform:translateY(-26px);margin-bottom:18px}
+
+
+/* Slightly reduce the News & Updates heading so it sits comfortably above its card */
+#news > h2{font-size:clamp(28px,4vw,48px)}

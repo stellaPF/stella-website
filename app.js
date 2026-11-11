@@ -18,9 +18,10 @@ const translations={
 'اكتشف STELLA':'Discover STELLA','Born in the Past, Built for the Future.':'Born in the Past, Built for the Future.','1999 — عنصر رمزي في هوية STELLA، وليس تاريخ التأسيس.':'1999 — a symbolic part of STELLA’s identity, not its founding date.',
 'من غزة، حيث تبدأ الحكاية، إلى العالم حيث نطمح أن يصل أثرنا.':'From Gaza, where the story begins, to the world, where we hope our impact will reach.',
 'لم تنشأ STELLA من ظروف عادية، بل من واقع مليء بالتحديات ومن إيمان بأن الأحلام الكبيرة لا تعرف حدودًا. نسعى لصناعة محتوى مفيد، فرص تعليم، مشاريع وشراكات تترك أثرًا.':'STELLA was not born in ordinary circumstances. It grew from challenge and the belief that big dreams know no borders. We aim to create useful content, learning opportunities, projects and partnerships that make a difference.',
-'Founder & CEO of STELLA':'Founder & CEO of STELLA','فلسطيني، حاصل على دبلوم في تكنولوجيا العمليات الجراحية وبكالوريوس في التمريض، مع خبرة تمتد لثماني سنوات في صناعة المحتوى الرقمي ومؤهلات في صناعة المحتوى.':'Palestinian, with a diploma in Surgical Operations Technology and a bachelor’s degree in Nursing, plus eight years of digital content creation experience and related qualifications.',
+'Founder & CEO of STELLA':'Founder & CEO of STELLA','فلسطيني، حاصل على دبلوم فني عمليات جراحية وبكالوريوس في التمريض، مع خبرة تمتد لثماني سنوات في صناعة المحتوى الرقمي ومؤهلات في صناعة المحتوى.':'Palestinian, with a diploma as a Surgical Operations Technician and a bachelor’s degree in Nursing, plus eight years of digital content creation experience and related qualifications.',
 'رحلة مهنية وتعليمية تشكلت وسط تحديات غزة، مع رؤية لبناء أثر يتجاوز الحدود.':'A professional and educational journey shaped by the challenges of Gaza, with a vision to create impact beyond borders.',
-'قناة المؤسس على YouTube ↗':'Founder’s YouTube channel ↗','ثلاثة مسارات، عالم واسع من الأفكار.':'Three paths. A world of ideas.',
+'قناة المؤسس على YouTube':'Founder’s YouTube channel',
+'↗':'↗','ثلاثة مسارات، عالم واسع من الأفكار.':'Three paths. A world of ideas.',
 'صناعة المحتوى، تطوير الذات، الإنتاجية، النصائح، الاستثمار والتكنولوجيا.':'Content creation, self-development, productivity, tips, investing and technology.',
 'روحي، ديني، نفسي، حياتي، جسدي، مال وعلاقات.':'Spirituality, faith, psychology, life, wellbeing, money and relationships.',
 'الدول، الشخصيات البارزة، الأحداث العالمية، المؤلفون والكتاب، الشركات، الاستقصائي، الوثائقي والرياضة.':'Countries, notable figures, world events, writers, companies, investigative stories, documentaries and sports.',
@@ -52,9 +53,12 @@ function translateTextNode(node,language){
 function setLanguage(language){
  document.documentElement.lang=language;
  document.documentElement.dir=language==='ar'?'rtl':'ltr';
- document.querySelectorAll('body *').forEach(el=>{
-  if(el.children.length===0 && el.childNodes.length===1 && el.firstChild.nodeType===3)translateTextNode(el.firstChild,language);
- });
+ const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode(node){
+  const parent=node.parentElement;
+  if(!parent || ['SCRIPT','STYLE'].includes(parent.tagName) || !node.nodeValue.trim())return NodeFilter.FILTER_REJECT;
+  return NodeFilter.FILTER_ACCEPT;
+ }});
+ let node; while(node=walker.nextNode())translateTextNode(node,language);
  document.querySelectorAll('.side-inner summary').forEach(el=>{if(!el.dataset.original)el.dataset.original=el.textContent;el.textContent=language==='en'?(translations[el.dataset.original]||el.dataset.original):el.dataset.original});
  document.querySelectorAll('[aria-label]').forEach(el=>{if(!el.dataset.originalLabel)el.dataset.originalLabel=el.getAttribute('aria-label');el.setAttribute('aria-label',language==='en'?(translations[el.dataset.originalLabel]||el.dataset.originalLabel):el.dataset.originalLabel)});
  const btn=document.getElementById('languageBtn');if(btn)btn.textContent=language==='ar'?'EN':'عربي';

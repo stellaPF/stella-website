@@ -181,3 +181,9 @@ body.light .about-activity-card:hover{background:#fafafa;border-color:rgba(88,11
 @media(max-width:900px){.about-activity-card{flex-basis:calc(50% - 9px)}}
 @media(max-width:600px){.about-head{align-items:flex-start}.about-carousel-controls{margin-top:6px}.about-activity-card{flex-basis:88%;min-height:230px;padding:24px}.about-activity-card h3{font-size:21px}}
 
+
+/* Founder channel buttons: fixed two-column layout, responsive without horizontal scrolling */
+.founder-channel-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:100%;align-items:stretch}
+.founder-channel-actions .founder-youtube-btn{width:100%;min-width:0;margin-top:22px;justify-content:center;white-space:normal;text-align:center}
+@media(max-width:900px){.founder-channel-actions{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}}
+@media(max-width:600px){.founder-channel-actions{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.founder-channel-actions .founder-youtube-btn{padding:10px 8px;font-size:12px;gap:7px}.founder-channel-actions .youtube-icon{width:22px;height:22px;flex:0 0 22px}.founder-channel-actions .arrow{font-size:14px}}

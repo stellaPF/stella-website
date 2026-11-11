@@ -1005,3 +1005,10 @@ body.light .nav{border-bottom-color:rgba(76,112,143,.2);box-shadow:0 8px 26px rg
 body.light .nav::before{background:linear-gradient(90deg,transparent,rgba(88,125,156,.38),transparent)}
 body.light .header-tools-box{border-color:rgba(88,125,156,.31);box-shadow:0 10px 26px rgba(34,61,82,.07),inset 0 1px #fff}
 @media(max-width:600px){.nav{padding-top:10px;padding-bottom:10px}.nav::before{left:4%;right:4%}}
+
+
+/* Keep the off-canvas menu fully outside the viewport at every screen width */
+.side-menu{right:0;transform:translateX(105%);visibility:hidden;transition:transform .35s ease,visibility .35s ease}
+.side-menu.open{right:0;transform:translateX(0);visibility:visible}
+html[dir="rtl"] .side-menu{right:0;left:auto}
+@media(prefers-reduced-motion:reduce){.side-menu{transition:none}}

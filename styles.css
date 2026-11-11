@@ -821,3 +821,19 @@ body.light #news .news-card{background:linear-gradient(135deg,rgba(120,148,173,.
 body.light #news .news-card strong{color:#58758e;border-color:rgba(88,117,142,.35)}
 body.light #news .news-card p{color:#555}
 @media(max-width:600px){#news .news-card{margin-top:20px;padding:21px;border-radius:19px;gap:10px}#news .news-card p{line-height:1.9}}
+
+
+/* Charity section: make the invitation clear with restrained visual emphasis */
+#charity{position:relative;isolation:isolate;overflow:hidden}
+#charity::before{content:"";position:absolute;z-index:-1;inset:18px 7%;border:1px solid rgba(120,148,173,.22);border-radius:28px;background:radial-gradient(ellipse at 12% 20%,rgba(120,148,173,.13),transparent 55%);pointer-events:none}
+#charity>.eyebrow{display:flex;align-items:center;gap:9px;margin-bottom:16px;font-weight:700;letter-spacing:.08em}
+#charity>.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--stella-blue);box-shadow:0 0 0 5px rgba(120,148,173,.12)}
+#charity>h2{max-width:760px;margin:0 0 16px;line-height:1.25}
+#charity>.muted{max-width:650px;margin:0 0 25px;font-size:clamp(15px,1.5vw,18px);line-height:2;color:#555}
+#charity>.btn{display:inline-flex;align-items:center;gap:12px;min-height:48px;padding-inline:23px;box-shadow:0 8px 22px rgba(88,117,142,.16);transition:transform .22s ease,box-shadow .22s ease,background .22s ease}
+#charity>.btn::after{content:"↗";font-size:17px;transition:transform .22s ease}
+#charity>.btn:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(88,117,142,.22);background:#91a9bd}
+#charity>.btn:hover::after{transform:translate(2px,-2px)}
+#charity>.btn:active{transform:scale(.98)}
+@media(max-width:600px){#charity::before{inset:14px 10px;border-radius:21px}#charity>.muted{margin-bottom:21px}}
+@media(prefers-reduced-motion:reduce){#charity>.btn,#charity>.btn::after{transition:none}}

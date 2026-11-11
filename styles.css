@@ -87,3 +87,7 @@ body.light .founder-photo::after{
 
 /* Join STELLA cards: match the subtle hover shade used in collaboration cards */
 #join .card.dark:hover{background:#1b1b1b;border-color:rgba(120,148,173,.28);transform:translateY(-5px)}
+
+/* Refine contact email hierarchy: smaller, calmer, and better balanced */
+.contact .email{display:inline-block;font-size:clamp(15px,1.8vw,22px);font-weight:600;letter-spacing:.01em;line-height:1.5;color:var(--stella-blue);border-bottom:1px solid rgba(120,148,173,.38);padding-bottom:5px;overflow-wrap:anywhere}.contact .email:hover{color:#a8bbcb;border-color:#a8bbcb}
+@media(max-width:900px){.contact .email{font-size:17px}}

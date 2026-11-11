@@ -454,3 +454,32 @@ body.light .about-arrow:hover{color:#38566d;background:rgba(120,148,173,.18)}
 .about-arrow svg{display:block;width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
 .about-arrow[data-about-prev] svg{transform:scaleX(-1)}
 .about-arrow[data-about-next] svg{transform:none}
+
+
+/* Smooth glass header: content slips behind with a soft lower fade */
+.nav{
+  position:sticky;
+  isolation:isolate;
+  background:rgba(10,10,10,.76);
+  -webkit-backdrop-filter:blur(24px) saturate(145%);
+  backdrop-filter:blur(24px) saturate(145%);
+  border-bottom-color:rgba(120,148,173,.18);
+}
+.nav::after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  pointer-events:none;
+  left:0;
+  right:0;
+  top:100%;
+  height:18px;
+  background:linear-gradient(to bottom,rgba(10,10,10,.76),rgba(10,10,10,0));
+}
+body.light .nav{
+  background:rgba(255,255,255,.76);
+  border-bottom-color:rgba(88,117,142,.18);
+}
+body.light .nav::after{
+  background:linear-gradient(to bottom,rgba(255,255,255,.76),rgba(255,255,255,0));
+}

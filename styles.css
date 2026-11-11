@@ -91,3 +91,6 @@ body.light .founder-photo::after{
 /* Refine contact email hierarchy: smaller, calmer, and better balanced */
 .contact .email{display:inline-block;font-size:clamp(15px,1.8vw,22px);font-weight:600;letter-spacing:.01em;line-height:1.5;color:var(--stella-blue);border-bottom:1px solid rgba(120,148,173,.38);padding-bottom:5px;overflow-wrap:anywhere}.contact .email:hover{color:#a8bbcb;border-color:#a8bbcb}
 @media(max-width:900px){.contact .email{font-size:17px}}
+
+/* Keep the exact same Latin STELLA PF wordmark direction in Arabic and English layouts */
+.brand > span,.side-brand,h1,.footer-brand{direction:ltr;unicode-bidi:isolate}

@@ -50,8 +50,15 @@ function translateTextNode(node,language){
  const translated=language==='en'?(translations[source]||source):source;
  node.nodeValue=node.__stellaOriginal.replace(source,translated);
 }
+
+function updateLogoWordmarks(){
+ const markup='Stell<span class="logo-a">a<sup>PF.</sup></span>';
+ document.querySelectorAll('.brand > span,.side-brand,h1,.footer-brand').forEach(el=>{el.innerHTML=markup;el.setAttribute('dir','ltr');el.style.unicodeBidi='isolate'});
+}
+
 function setLanguage(language){
  document.documentElement.lang=language;
+ updateLogoWordmarks(language);
  document.documentElement.dir=language==='ar'?'rtl':'ltr';
  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode(node){
   const parent=node.parentElement;

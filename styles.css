@@ -915,3 +915,29 @@ body.light .vip-card h2::after{background:linear-gradient(90deg,#587d9c,rgba(88,
 body.light .vip-card:hover,body.light .vip-card:focus-visible{border-color:rgba(64,104,139,.68);box-shadow:0 28px 68px rgba(39,67,88,.2),0 0 28px rgba(88,125,156,.12),inset 0 1px 0 #fff}
 @media(max-width:600px){.vip-section{padding:24px 22px 32px}.vip-card{min-height:160px;padding:28px 25px;border-radius:22px;gap:12px}.vip-card::after{inset:9px;border-radius:15px}.vip-card h2{font-size:21px;line-height:1.7}.vip-card::before{right:1%;font-size:112px}}
 @media(prefers-reduced-motion:reduce){.vip-card{transition:none}}
+
+
+/* Support section contact CTA: high-visibility invitation */
+#support{position:relative;isolation:isolate;overflow:hidden}
+#support::before{content:"";position:absolute;z-index:-1;inset:24px 7%;border:1px solid rgba(120,148,173,.2);border-radius:28px;background:radial-gradient(ellipse at 88% 50%,rgba(120,148,173,.16),transparent 55%);pointer-events:none}
+#support>h2{max-width:760px;margin:0 0 14px;font-size:clamp(36px,5vw,58px);line-height:1.25}
+#support>.muted{max-width:650px;margin:0 0 27px;font-size:clamp(16px,1.5vw,19px);line-height:2}
+#support>a.btn.primary{
+  position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:14px;
+  min-height:58px;padding:0 30px;border:1px solid #c4d9ea;border-radius:999px;
+  background:linear-gradient(115deg,#dcebf7 0%,#9fbdd6 52%,#7898b4 100%);
+  color:#102131;font-size:16px;font-weight:850;letter-spacing:.01em;
+  box-shadow:0 12px 32px rgba(91,137,174,.28),inset 0 1px rgba(255,255,255,.8);
+  transition:transform .24s ease,box-shadow .24s ease,filter .24s ease;
+}
+#support>a.btn.primary::after{content:"↗";display:grid;place-items:center;width:28px;height:28px;border:1px solid rgba(16,33,49,.22);border-radius:50%;font-size:17px;transition:transform .24s ease,background .24s ease}
+#support>a.btn.primary:hover{transform:translateY(-4px);filter:brightness(1.08);box-shadow:0 18px 42px rgba(91,137,174,.38),0 0 0 5px rgba(120,148,173,.1),inset 0 1px rgba(255,255,255,.9)}
+#support>a.btn.primary:hover::after{transform:translate(2px,-2px);background:rgba(255,255,255,.22)}
+#support>a.btn.primary:active{transform:translateY(-1px) scale(.98)}
+#support>a.btn.primary:focus-visible{outline:3px solid #91b9d9;outline-offset:5px}
+body.light #support::before{border-color:rgba(75,108,135,.25);background:radial-gradient(ellipse at 88% 50%,rgba(120,148,173,.15),transparent 55%)}
+body.light #support>a.btn.primary{border-color:#587d9c;background:linear-gradient(115deg,#476984,#6f91ad 55%,#91abc1);color:#fff;box-shadow:0 12px 30px rgba(44,82,111,.2),inset 0 1px rgba(255,255,255,.28)}
+body.light #support>a.btn.primary::after{border-color:rgba(255,255,255,.45)}
+body.light #support>a.btn.primary:hover{background:linear-gradient(115deg,#385a75,#587d9c 55%,#789bb8);box-shadow:0 18px 40px rgba(44,82,111,.27),0 0 0 5px rgba(88,125,156,.1)}
+@media(max-width:600px){#support::before{inset:14px 10px;border-radius:22px}#support>a.btn.primary{min-height:54px;padding:0 23px;font-size:15px}}
+@media(prefers-reduced-motion:reduce){#support>a.btn.primary,#support>a.btn.primary::after{transition:none}}

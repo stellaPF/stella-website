@@ -51,6 +51,7 @@ Object.assign(translations,{
 });
 
 Object.assign(translations,{
+ 'من نحن':'About us','من نحــن':'About us','الأعمال الخيرية':'Charity','الأعمال الخيريــة':'Charity','العربية':'Arabic','عربي':'Arabic',
  'بحث...':'Search...','بحث':'Search','التعاون':'Collaboration','الدعم':'Support',
  'الخصوصية':'Privacy','الشروط':'Terms',
  'فلسطيني، حاصل على دبلوم فني في العمليات الجراحية وبكالوريوس في التمريض، ولديه خبرة تمتد لثماني سنوات في صناعة المحتــوى الرقمي.':'Palestinian, with a diploma in Surgical Operations Technology and a bachelor’s degree in Nursing, and eight years of experience in digital content creation.',
@@ -107,7 +108,7 @@ function setLanguage(language){
   metaDescription.dataset.originalContent=raw;
   metaDescription.setAttribute('content',language==='en'?'STELLA — a content, education and digital projects platform from Gaza to the world.':'STELLA — منصة محتوى وتعليم ومشاريع رقمية من غزة إلى العالم.');
  }
- const btn=document.getElementById('languageBtn');if(btn)btn.textContent=language==='ar'?'EN':'عربي';
+ const btn=document.getElementById('languageBtn');if(btn)btn.textContent=language==='ar'?'EN':'Arabic';
  localStorage.setItem('stella-language',language);
 }
 document.getElementById('languageBtn')?.addEventListener('click',()=>setLanguage(document.documentElement.lang==='ar'?'en':'ar'));

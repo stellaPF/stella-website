@@ -1101,3 +1101,22 @@ html[lang="ar"] .content-page .content-hero h1{font-size:clamp(30px,5.4vw,60px)}
  .shop-soon-card h1{font-size:clamp(23px,7.2vw,31px);line-height:1.65!important}
  .shop-soon-card p{font-size:14px;line-height:2}
 }
+
+
+/* Practical page-back control: clear label, generous hit area and responsive pill */
+.nav .page-back{
+ display:inline-flex;align-items:center;justify-content:center;gap:9px;
+ min-height:42px;min-width:86px;padding:0 13px;
+ border:1px solid rgba(145,185,217,.38);border-radius:999px;
+ background:rgba(120,148,173,.10);color:var(--text,#eaf1f6);
+ text-decoration:none;font-size:13px;font-weight:750;line-height:1;
+ transition:background .2s ease,border-color .2s ease,transform .2s ease,box-shadow .2s ease;
+}
+.nav .page-back-arrow{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;font-size:18px;line-height:1;transition:transform .2s ease}
+.nav .page-back:hover{background:rgba(120,148,173,.2);border-color:rgba(145,185,217,.72);transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.14)}
+.nav .page-back:active{transform:scale(.96)}
+.nav .page-back:focus-visible{outline:3px solid #91b9d9;outline-offset:3px}
+html[dir="rtl"] .nav .page-back-arrow{transform:scaleX(-1)}
+body.light .nav .page-back{color:#263d50;background:rgba(88,125,156,.08);border-color:rgba(88,125,156,.32)}
+body.light .nav .page-back:hover{background:rgba(88,125,156,.15);border-color:rgba(88,125,156,.6)}
+@media(max-width:600px){.nav .page-back{min-width:78px;min-height:40px;padding:0 11px;gap:7px;font-size:12px}}

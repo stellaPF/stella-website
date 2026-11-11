@@ -1428,3 +1428,20 @@ table { max-width: 100%; }
       0 0 12px rgba(151, 197, 235, .3);
   }
 }
+
+
+/* Restore the original compact PF signature above the final a in STELLA */
+.logo-a { position: relative !important; display: inline-block !important; }
+.logo-a > sup {
+  position: absolute !important;
+  top: -.62em !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: translateX(-50%) !important;
+  font-size: .27em !important;
+  line-height: 1 !important;
+  white-space: nowrap;
+  font-weight: 800 !important;
+  letter-spacing: 0 !important;
+}

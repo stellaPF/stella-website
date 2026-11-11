@@ -84,3 +84,6 @@ body.light .founder-photo::after{
 
 /* Collaboration cards: subtle hover shade, keeping the card's dark palette */
 #collab .card.dark:hover{background:#1b1b1b;border-color:rgba(120,148,173,.28);transform:translateY(-5px)}
+
+/* Join STELLA cards: match the subtle hover shade used in collaboration cards */
+#join .card.dark:hover{background:#1b1b1b;border-color:rgba(120,148,173,.28);transform:translateY(-5px)}

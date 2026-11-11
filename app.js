@@ -51,8 +51,8 @@ function translateTextNode(node,language){
  node.nodeValue=node.__stellaOriginal.replace(source,translated);
 }
 
-function updateLogoWordmarks(language){
- const markup=language==='ar'?'ستي ل<span class="logo-a">ا<sup>PF.</sup></span>':'Stell<span class="logo-a">a<sup>PF.</sup></span>';
+function updateLogoWordmarks(){
+ const markup='Stell<span class="logo-a">a<sup>PF.</sup></span>';
  document.querySelectorAll('.brand > span,.side-brand,h1,.footer-brand').forEach(el=>{el.innerHTML=markup});
 }
 

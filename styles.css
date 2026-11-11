@@ -863,3 +863,24 @@ body.light #charity>.btn{background:#42617a;border-color:#42617a;color:#fff;box-
 body.light #charity>.btn:hover{background:#304d65;border-color:#304d65}
 @media(hover:hover){#charity:hover::before{border-color:rgba(145,177,204,.52)}}
 @media(max-width:600px){#charity::before{inset:14px 10px;border-radius:23px}#charity>h2{font-size:38px}}
+
+
+/* Distinctive Gaza-to-world hero signature */
+.hero-copy>.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;width:max-content;max-width:100%;
+  padding:9px 16px;border:1px solid rgba(135,174,207,.42);border-radius:999px;
+  background:linear-gradient(110deg,rgba(120,148,173,.2),rgba(120,148,173,.06));
+  color:#d6e7f5;font-size:12px;font-weight:800;letter-spacing:.06em;
+  box-shadow:0 8px 28px rgba(67,115,154,.13),inset 0 1px rgba(255,255,255,.07);
+}
+.hero-copy>.eyebrow::before{
+  content:"";width:8px;height:8px;flex:0 0 8px;border-radius:50%;
+  background:#91b9d9;box-shadow:0 0 0 4px rgba(145,185,217,.13),0 0 14px rgba(145,185,217,.55);
+}
+body.light .hero-copy>.eyebrow{
+  color:#385a75;border-color:rgba(76,112,143,.3);
+  background:linear-gradient(110deg,rgba(120,148,173,.19),rgba(120,148,173,.07));
+  box-shadow:0 8px 24px rgba(54,89,119,.09),inset 0 1px rgba(255,255,255,.8);
+}
+body.light .hero-copy>.eyebrow::before{background:#587d9c;box-shadow:0 0 0 4px rgba(88,125,156,.13),0 0 12px rgba(88,125,156,.3)}
+@media(max-width:600px){.hero-copy>.eyebrow{font-size:11px;padding:8px 13px}}

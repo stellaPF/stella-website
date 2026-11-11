@@ -395,3 +395,13 @@ body.light .header-tools-box .header-control-separator{background:linear-gradien
 .header-tools-box .shop-btn:hover{color:var(--stella-blue)}
 body.light .header-tools-box .shop-btn{color:#5d7284}
 body.light .header-tools-box .shop-btn:hover{color:var(--stella-blue)}
+
+
+/* VIP card under the homepage hero */
+.vip-section{padding-top:18px;padding-bottom:18px}
+.vip-card{max-width:1100px;margin:0 auto;padding:18px 24px;border:1px solid rgba(120,148,173,.28);border-radius:16px;background:rgba(255,255,255,.028);display:flex;align-items:center;gap:16px}
+.vip-card .eyebrow{margin:0;min-width:54px;font-size:11px;font-weight:900;letter-spacing:1.5px;color:var(--stella-blue)}
+.vip-card h2{margin:0;font-size:14px;font-weight:700;color:#c8d0d6}
+body.light .vip-card{background:rgba(255,255,255,.62);border-color:rgba(88,117,142,.25)}
+body.light .vip-card h2{color:#44515b}
+@media(max-width:600px){.vip-section{padding:12px 22px}.vip-card{padding:14px 16px;gap:12px}.vip-card h2{font-size:12px;line-height:1.7}}

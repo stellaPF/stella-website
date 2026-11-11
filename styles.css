@@ -553,3 +553,57 @@ body.light .founder-youtube-btn:hover{
   outline:2px solid #7894ad;
   outline-offset:3px;
 }
+
+
+/* Email address: keep Latin characters LTR while aligning the contact block to the page language */
+.contact{align-items:center;flex-wrap:wrap}
+.contact .email{
+  display:inline-flex;
+  direction:ltr;
+  unicode-bidi:isolate;
+  text-align:left;
+  align-items:center;
+  justify-content:center;
+  max-width:100%;
+  padding:10px 16px;
+  border:1px solid rgba(120,148,173,.42);
+  border-radius:14px;
+  background:rgba(120,148,173,.09);
+  color:#b7c9d8;
+  font-size:clamp(15px,1.45vw,20px);
+  font-weight:600;
+  line-height:1.45;
+  letter-spacing:0;
+  overflow-wrap:anywhere;
+  word-break:normal;
+  box-shadow:0 8px 24px rgba(0,0,0,.1);
+}
+.contact .email:hover{
+  color:#eaf2f8;
+  background:rgba(120,148,173,.18);
+  border-color:var(--stella-blue);
+  box-shadow:0 12px 30px rgba(0,0,0,.16);
+}
+html[lang="ar"] .contact{direction:rtl;text-align:right}
+html[lang="ar"] .contact .email{margin-inline-start:0;margin-inline-end:auto}
+html[lang="en"] .contact{direction:ltr;text-align:left}
+html[lang="en"] .contact .email{margin-inline-start:0;margin-inline-end:auto}
+body.light .contact .email{
+  color:#38566d;
+  background:rgba(120,148,173,.1);
+  border-color:rgba(88,117,142,.38);
+  box-shadow:0 8px 22px rgba(35,55,72,.07);
+}
+body.light .contact .email:hover{
+  color:#172d3d;
+  background:#e7eef3;
+  border-color:#58758e;
+}
+@media(max-width:900px){
+  .contact{align-items:flex-start}
+  .contact .email{font-size:16px;max-width:100%}
+}
+@media(max-width:600px){
+  .contact{width:100%;gap:18px}
+  .contact .email{width:100%;justify-content:center;padding:12px 10px;font-size:15px}
+}

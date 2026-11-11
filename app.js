@@ -11,7 +11,7 @@ document.getElementById('sideTheme').onclick=(e)=>{e.preventDefault();toggleThem
 if(localStorage.getItem('stella-theme')==='light')document.body.classList.add('light');
 
 const translations={
-'الرئيسية':'Home','من نحن':'About us','المحتوى':'Content','الكورسات والدورات':'Courses','المؤسس':'Founder','المنتجات والمشاريع':'Products & Projects',
+'الرئيسية':'Home','من نحن':'About us','المحتوى':'Content','الدورات':'Courses','المؤسس':'Founder','المنتجات والمشاريع':'Products & Projects',
 'التعاون والشراكات':'Partnerships','الداعمون ماليًا':'Support STELLA','الإعلانات':'Advertising','الأخبار والتحديثات':'News & Updates','انضم إلى STELLA':'Join STELLA','تواصل معنا':'Contact us','الإعدادات':'Settings','تطوير الذات':'Self-development','البودكاست':'Podcast','التاريخ والحضارات':'History & Civilizations','العربية / English':'العربية / English','الوضع النهاري / الليلي':'Light / Dark mode',
 'من غزة إلى العالم':'From Gaza to the world','شركة ولدت قديمًا، لتصنع مستقبلًا يصل إلى العالم.':'A company with roots in the past, building a future that reaches the world.',
 'منصة تجمع المحتوى، التعليم، المشاريع، التعاون والأفكار في تجربة واحدة هادئة، حديثة وقابلة للنمو.':'A platform bringing content, education, projects, partnerships and ideas together in one modern, evolving experience.',

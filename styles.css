@@ -1264,3 +1264,80 @@ table { max-width: 100%; }
   input, select, textarea, button { max-width: 100%; }
   .stella-footer { width: 100%; }
 }
+
+
+/* Desktop refinement for Charity and Support feature cards */
+.feature-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: min(100% - 48px, 1120px);
+  margin: 26px auto;
+  padding: clamp(28px, 4vw, 48px);
+  border: 1px solid rgba(130, 150, 180, .2);
+  border-radius: 22px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.feature-section::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(180deg, #8fa9ca, #b9a3d8);
+  opacity: .9;
+  z-index: -1;
+}
+.feature-section h2 {
+  margin: 7px 0 14px;
+  max-width: 100%;
+}
+.feature-section > .muted {
+  max-width: 62ch;
+  margin: 0 0 24px;
+  line-height: 1.95;
+}
+.feature-section > .btn {
+  margin-top: 2px;
+  align-self: flex-start;
+}
+.charity-feature {
+  background: linear-gradient(135deg, rgba(240, 245, 250, .98), rgba(229, 237, 247, .92));
+  color: #172536;
+  box-shadow: 0 18px 45px rgba(30, 52, 78, .08);
+}
+.charity-feature .muted { color: #526174; }
+.support-feature {
+  background: linear-gradient(135deg, rgba(22, 30, 43, .98), rgba(31, 43, 61, .96));
+  color: #f4f6fa;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, .14);
+}
+.support-feature .muted { color: #c0cad7; }
+.support-feature::before {
+  background: linear-gradient(180deg, #c4a5e8, #83b7d8);
+}
+@media (min-width: 901px) {
+  .feature-section {
+    min-height: 270px;
+    justify-content: center;
+  }
+  .feature-section > .muted { max-width: 68ch; }
+}
+@media (max-width: 900px) {
+  .feature-section {
+    width: calc(100% - 36px);
+    margin: 20px auto;
+    padding: 30px;
+  }
+}
+@media (max-width: 600px) {
+  .feature-section {
+    width: calc(100% - 28px);
+    margin: 14px auto;
+    padding: 24px 20px;
+    border-radius: 17px;
+  }
+  .feature-section > .btn { align-self: stretch; text-align: center; }
+  .feature-section > .muted { margin-bottom: 20px; }
+}

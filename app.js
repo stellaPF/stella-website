@@ -61,6 +61,19 @@ Object.assign(translations,{
 });
 const reverseTranslations=Object.fromEntries(Object.entries(translations).map(([ar,en])=>[en,ar]));
 
+Object.assign(translations,{
+ 'من غــزة، حيث تبدأ الحكــاية، إلى العــالم، حيث نطمح أن يصل أثرنــا.':'From Gaza, where the story begins, to the world, where we hope our impact will reach.',
+ 'الأعمال الخيريــة':'Charitable Work',
+ 'العطاء والأثر':'Giving & Impact',
+ 'مساحة للمبادرات الإنسانية والخيرية، والتعريف بفرص المساهمة وصناعة أثر إيجابي.':'A space for humanitarian and charitable initiatives, highlighting ways to contribute and create a positive impact.',
+ 'اكتشف الأعمال الخيريــة':'Explore Charitable Work',
+ 'مساحة مخصصة للمبادرات الإنسانية والأعمال الخيرية التي نطمح أن نطلقها ونساهم فيها. سنعمل على تطوير هذه الصفحة وإضافة التفاصيل والمبادرات لاحقًا.':'A space for humanitarian and charitable initiatives that we aim to launch and support. We will continue developing this page and add more details and initiatives soon.',
+ 'قريبًا — مساحة للعطاء والأثر':'Coming soon — a space for giving and impact',
+ 'من نحن':'About us','العطاء والأثر':'Giving & Impact'
+});
+
+Object.assign(reverseTranslations,Object.fromEntries(Object.entries(translations).map(([ar,en])=>[en,ar])));
+
 function translateTextNode(node,language){
  const raw=node.__stellaOriginal??(node.__stellaOriginal=node.nodeValue);
  const source=raw.trim();

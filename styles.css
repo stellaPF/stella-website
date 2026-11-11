@@ -109,3 +109,7 @@ html[lang="en"] .footer-brand{text-align:left}
 
 /* Lift the hero tagline slightly */
 .hero-copy > .eyebrow{transform:translateY(-6px)}
+
+
+/* Give the hero tagline a little more visual separation above the wordmark */
+.hero-copy > .eyebrow{transform:translateY(-14px)}
